@@ -1,0 +1,236 @@
+$primary: #691b99;
+$primary-light: #9b4dcb;
+$primary-dark: #37006a;
+$secondary: rgba(0, 176, 255, 1);
+$secondary-transparent: rgba(0, 176, 255, 0);
+$secondary-light: #69e2ff;
+$secondary-dark: #0081cb;
+$text-primary: #fff;
+$text-secondary: #000;
+
+.outline {
+  border: 1px solid red;
+}
+body {
+  background-color: #E1E2E1;
+}
+li {
+  margin-left: 0;
+}
+
+.initials {
+  // font-family: 'Tillana', cursive;
+  font-family: 'Merienda One', cursive;
+  // font-family: 'Averia Sans Libre', cursive;
+}
+.title {
+  font-family: 'Rubik', sans-serif;
+}
+
+@media all and (min-width: 465px) {
+.title{
+    font-size: 70px;
+  }
+}
+
+@media all and (max-width: 465px) and (min-width: 50px) {
+.title{
+    font-size: 15vw;
+  }
+}
+
+// @media all and (min-width: 365px) {
+// .title{
+//     font-size: 70px;
+//   }
+// }
+
+@media all and (max-width: 357px) and (min-width: 301px) {
+.nav-tabs{
+    font-size: 4vw;
+  }
+}
+@media all and (max-width: 300px) and (min-width: 257px) {
+.nav-tabs{
+    font-size: 3.5vw;
+  }
+}
+@media all and (max-width: 256px) and (min-width: 50px) {
+.nav-tabs{
+    font-size: 3vw;
+  }
+}
+
+.footer-name {
+  font-family: 'Rubik', sans-serif;
+}
+.card-title {
+  font-family: 'Crete Round', serif;
+}
+.card-subtitle {
+  font-family: 'Crete Round', serif;
+}
+.card-text {
+  font-family: 'Istok Web', sans-serif;
+}
+.color-primary {
+  background-color: $primary !important;
+  color: $text-primary !important;
+}
+.color-primary-light {
+  background-color: $primary-light !important;
+  color: $text-primary !important;
+}
+.color-primary-dark {
+  background-color: $primary-dark !important;
+  color: $text-primary !important;
+}
+.color-secondary {
+  background-color: $secondary !important;
+  color: $text-secondary !important;
+}
+.color-secondary-light {
+  background-color: $secondary-light !important;
+  color: $text-secondary !important;
+}
+.color-secondary-dark {
+  background-color: $secondary-dark !important;
+  color: $text-secondary !important;
+}
+.nav-link {
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: 4px solid $secondary-transparent !important;
+  transition: border 500ms ease;
+}
+.nav-link.active {
+  border-bottom: 4px solid $secondary !important;
+}
+
+@mixin z-2() {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+@mixin z-4() {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.z-2 {
+  @include z-2;
+}
+.z-4 {
+  @include z-4;
+}
+.tall {
+  height: 100%;
+}
+.card {
+  flex: 1;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.aws {
+  color: #FF9900;
+}
+.docker {
+  color: #0db7ed;
+}
+
+.tooltip-inner {
+  background-color: $primary-dark;
+  @include z-2;
+}
+.tooltip.bs-tooltip-right .arrow:before, {
+  border-right-color: $primary-dark !important;
+}
+.tooltip.bs-tooltip-left .arrow:before, {
+  border-left-color: $primary-dark !important;
+}
+.tooltip.bs-tooltip-bottom .arrow:before, {
+  border-bottom-color: $primary-dark !important;
+}
+.tooltip.bs-tooltip-top .arrow:before, {
+  border-top-color: $primary-dark !important;
+}
+
+
+/* -- Ripple effect -------------------------------- */
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0,0,0);
+}
+.ink {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+
+  background: #fff;
+  opacity: .1;
+}
+
+// animation effect
+.ink.animate {
+  -webkit-animation: ripple .5s linear;
+  -moz-animation: ripple .5s linear;
+  -ms-animation: ripple .5s linear;
+  -o-animation: ripple .5s linear;
+  animation: ripple .5s linear;
+}
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+@-webkit-keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+}
+@-moz-keyframes ripple {
+  100% {
+    opacity: 0;
+    -moz-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+}
+@-ms-keyframes ripple {
+  100% {
+    opacity: 0;
+    -ms-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+}
+@-o-keyframes ripple {
+  100% {
+    opacity: 0;
+    -o-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+}
