@@ -1,0 +1,4 @@
+[submodule "aws-ses-serverless-example"]
+	path = aws-ses-serverless-example
+	url = git@github.com:smiller171/aws-ses-serverless-example.git
+	branch = sesIAMRole

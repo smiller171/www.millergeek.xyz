@@ -1,13 +1,68 @@
-.outline {
-  border: 1px solid red;
-}
-
 body {
   background-color: #E1E2E1;
+  font-family: 'Istok Web', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-li {
-  margin-left: 0;
+.tab-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+header, footer, .nav {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+
+.footer {
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px;
+  /* Vertically center the text there */
+}
+
+button {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  outline: none !important;
+  border: none !important;
+}
+
+button:active {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  outline: none !important;
+  border: none !important;
+}
+
+buton:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+.alert {
+  width: 25em;
+  height: 5em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .initials {
@@ -48,15 +103,15 @@ li {
 }
 
 .card-title {
-  font-family: 'Crete Round', serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 .card-subtitle {
-  font-family: 'Crete Round', serif;
+  font-family: 'Rubik', sans-serif;
 }
 
-.card-text {
-  font-family: 'Istok Web', sans-serif;
+.nav-item {
+  font-family: 'Rubik', sans-serif;
 }
 
 .color-primary {
@@ -110,34 +165,10 @@ li {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.tall {
-  height: 100%;
-}
-
 .card {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px;
-  /* Vertically center the text there */
 }
 
 .aws {
