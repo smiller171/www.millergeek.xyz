@@ -6,6 +6,9 @@ jspm_packages
 .serverless
 config.json
 
+# compiled objects
+dist
+
 # OSX stupid annoying stuff
 .DS_Store
 
