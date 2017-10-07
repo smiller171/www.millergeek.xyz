@@ -9,6 +9,11 @@ var autoprefixer = require('autoprefixer');
 var concat       = require('gulp-concat');
 var cleanCss = require('gulp-clean-css');
 
+gulp.task('build', ['sass', 'js', 'copy']);
+gulp.task('deploy', function() {
+  // add edployment instructions
+})
+
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass', 'js'], function() {
 
