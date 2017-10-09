@@ -13,8 +13,9 @@ var parallelize = require("concurrent-transform");
 var merge = require("merge-stream");
 var gzip = gulp.src(["dist/**/*", "!dist/favicon*", "!dist/images"]).pipe(awspublish.gzip());
 var plain = gulp.src([ "dist/favicon*", "dist/images*/**/*" ]);
+var imagemin = require("gulp-imagemin");
 
-gulp.task("build", ["sass", "js", "copy"]);
+gulp.task("build", ["sass", "js", "copy", "imageMin"]);
 gulp.task("deploy", function() {
   var publisher = awspublish.create({
     region: "us-east-1",
@@ -85,7 +86,13 @@ gulp.task("js-watch", ["js"], function (done) {
 });
 
 gulp.task("copy", function() {
-  return gulp.src(["app/index.html", "app/favicon.ico", "app/favicon.png", "app/manifest.json", "app/images*/**/*"])
+  return gulp.src(["app/index.html", "app/manifest.json"])
+    .pipe(gulp.dest("dist"));
+});
+
+gulp.task("imageMin", function() {
+  gulp.src(["app/images*/**/*", "app/favicon.*"])
+    .pipe(imagemin())
     .pipe(gulp.dest("dist"));
 });
 
