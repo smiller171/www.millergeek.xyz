@@ -1,0 +1,45 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/www.millergeek.xyz
+    steps:
+      - checkout
+      - restore_cache:
+        keys:
+          # Find a cache corresponding to this specific yarn.lock checksum
+          - v1-deps-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+          # Find a cache corresponding to this specific package.json checksum
+          - v1-deps-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+          # Find the most recent cache used from this branch
+          - v1-deps-{{ arch }}-{{ .Branch }}
+          # Find the most recent cache used from master
+          - v1-deps-{{ arch }}-master
+      - run:
+        name: Install npm dependencies
+        command: yarn
+        no_output_timeout: 3m
+      # - run:
+      #     name: Install other dependencies
+      #     command: apt-get install -y libjpeg libpng
+      #     no_output_timeout: 3m
+      - run:
+        name: Run linter
+        command: eslint app
+        no_output_timeout: 1m
+      - run:
+        name: Build site
+        command: gulp build
+        no_output_timeout: 1m
+      - save_cache:
+        key: v1-deps-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+        paths:
+          - node_modules
+      - deploy:
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            gulp deploy;
+          else
+            echo "Not master branch so not deploying"
+          fi
