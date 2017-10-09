@@ -30,7 +30,7 @@ jobs:
       #     no_output_timeout: 3m
       - run:
           name: Run linter
-          command: yarn lint -- --format junit -o reports/junit/js-lint-results.xml
+          command: yarn lint --format junit -o reports/junit/js-lint-results.xml
           no_output_timeout: 1m
       - run:
           name: Build site
