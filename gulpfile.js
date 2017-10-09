@@ -13,14 +13,14 @@ var parallelize = require("concurrent-transform");
 var merge = require("merge-stream");
 var gzip = gulp.src(["dist/**/*", "!dist/favicon*", "!dist/images"]).pipe(awspublish.gzip());
 var plain = gulp.src([ "dist/favicon*", "dist/images*/**/*" ]);
-var imagemin = require("gulp-imagemin");
+var imagemin = require("gulp-image");
 
 gulp.task("build", ["sass", "js", "copy", "imageMin"]);
 gulp.task("deploy", function() {
   var publisher = awspublish.create({
     region: "us-east-1",
     params: {
-      Bucket: "dev.millergeek.xyz"
+      Bucket: "www.millergeek.xyz"
     }
   }, {
     cacheFileName: "your-cache-location"

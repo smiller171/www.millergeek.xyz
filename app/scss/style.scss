@@ -156,7 +156,7 @@ header {
   border-top   : 0 !important;
   transition   : border 500ms ease;
 
-  .active {
+  &.active {
     border-bottom: 4px solid $secondary !important;
   }
 }
