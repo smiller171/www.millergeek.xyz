@@ -1,13 +1,19 @@
 # package directories
 node_modules
 jspm_packages
+bower_components
 
 # Serverless directories
 .serverless
 config.json
+
+# compiled objects
+dist
 
 # OSX stupid annoying stuff
 .DS_Store
 
 # unwanted
 react-contactform
+your-cache-location
+reports
