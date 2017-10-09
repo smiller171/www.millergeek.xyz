@@ -37,6 +37,7 @@
     "merge-stream": "^1.0.1"
   },
   "scripts": {
+    "postinstall": "bower install",
     "lint": "eslint app",
     "build": "gulp build",
     "deploy": "gulp deploy"
