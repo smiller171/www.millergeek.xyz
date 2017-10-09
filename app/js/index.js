@@ -1,7 +1,7 @@
 // Tooltips
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+  $("[data-toggle=\"tooltip\"]").tooltip();
+});
 
 $("#contactForm").submit(function(e) {
   e.preventDefault();
@@ -20,38 +20,38 @@ $("#contactForm").submit(function(e) {
     $("#emailFail").addClass("show");
     setTimeout( function(){ $("#emailFail").removeClass("show"); }, 2000 );
   });
-})
+});
 
 // Ripple-effect animation
 $(function($) {
-    $(".ripple-effect").click(function(e){
-        var rippler = $(this);
+  $(".ripple-effect").click(function(e){
+    var rippler = $(this);
 
         // create .ink element if it doesn't exist
-        if(rippler.find(".ink").length == 0) {
-            rippler.append("<span class='ink'></span>");
-        }
+    if(rippler.find(".ink").length == 0) {
+      rippler.append("<span class='ink'></span>");
+    }
 
-        var ink = rippler.find(".ink");
+    var ink = rippler.find(".ink");
 
         // prevent quick double clicks
-        ink.removeClass("animate");
+    ink.removeClass("animate");
 
         // set .ink diametr
-        if(!ink.height() && !ink.width())
+    if(!ink.height() && !ink.width())
         {
-            var d = Math.max(rippler.outerWidth(), rippler.outerHeight());
-            ink.css({height: d, width: d});
-        }
+      var d = Math.max(rippler.outerWidth(), rippler.outerHeight());
+      ink.css({height: d, width: d});
+    }
 
         // get click coordinates
-        var x = e.pageX - rippler.offset().left - ink.width()/2;
-        var y = e.pageY - rippler.offset().top - ink.height()/2;
+    var x = e.pageX - rippler.offset().left - ink.width()/2;
+    var y = e.pageY - rippler.offset().top - ink.height()/2;
 
         // set .ink position and add class .animate
-        ink.css({
-          top: y+'px',
-          left:x+'px'
-        }).addClass("animate");
-    })
+    ink.css({
+      top: y+"px",
+      left:x+"px"
+    }).addClass("animate");
+  });
 });
