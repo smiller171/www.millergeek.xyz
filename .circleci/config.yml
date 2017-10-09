@@ -17,6 +17,10 @@ jobs:
             # Find the most recent cache used from master
             - v1-deps-{{ arch }}-master
       - run:
+          name: Install global npm dependencies
+          command: yarn
+          no_output_timeout: 3m
+      - run:
           name: Install npm dependencies
           command: yarn
           no_output_timeout: 3m
@@ -26,12 +30,16 @@ jobs:
       #     no_output_timeout: 3m
       - run:
           name: Run linter
-          command: eslint app
+          command: yarn lint -- --format junit -o reports/junit/js-lint-results.xml
           no_output_timeout: 1m
       - run:
           name: Build site
-          command: gulp build
+          command: yarn build
           no_output_timeout: 1m
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports/junit
       - save_cache:
           key: v1-deps-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
           paths:
@@ -39,7 +47,7 @@ jobs:
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              gulp deploy;
+              yarn deploy;
             else
               echo "Not master branch so not deploying"
             fi
