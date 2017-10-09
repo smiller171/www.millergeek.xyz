@@ -2,7 +2,7 @@
   "name": "www.millergeek.xyz",
   "version": "1.0.0",
   "description": "Personal Website",
-  "main": "src/js/index.js",
+  "main": "app/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,14 +18,18 @@
   "homepage": "https://github.com/smiller171/www.millergeek.xyz#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.5",
+    "bower": "^1.8.2",
     "browser-sync": "^2.18.13",
     "concurrent-transform": "^1.0.0",
     "gulp": "^3.9.1",
+    "gulp-add-src": "^0.2.0",
     "gulp-awspublish": "^3.3.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
+    "gulp-filter": "^5.0.1",
     "gulp-image": "^4.0.0",
     "gulp-imagemin": "^3.4.0",
+    "gulp-main-bower-files": "^1.6.2",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",

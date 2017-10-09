@@ -1,0 +1,21 @@
+{
+  "name": "www.millergeek.xyz",
+  "description": "Personal Website",
+  "main": "app/index.html",
+  "authors": [
+    "Scott Miller"
+  ],
+  "license": "MIT",
+  "homepage": "https://www.millergeek.xyz",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-beta"
+  }
+}

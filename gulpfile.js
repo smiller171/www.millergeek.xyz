@@ -14,8 +14,11 @@ var merge = require("merge-stream");
 var gzip = gulp.src(["dist/**/*", "!dist/favicon*", "!dist/images"]).pipe(awspublish.gzip());
 var plain = gulp.src([ "dist/favicon*", "dist/images*/**/*" ]);
 var imagemin = require("gulp-image");
+var mainBowerFiles = require("gulp-main-bower-files");
+var gulpFilter = require("gulp-filter");
+var addsrc = require("gulp-add-src");
 
-gulp.task("build", ["sass", "js", "copy", "imageMin"]);
+gulp.task("build", ["sass", "js", "bootstrap", "copy", "imageMin"]);
 gulp.task("deploy", function() {
   var publisher = awspublish.create({
     region: "us-east-1",
@@ -50,12 +53,16 @@ gulp.task("deploy", function() {
 gulp.task("serve", ["sass", "js"], function() {
 
   browserSync.init({
-    server: [ "./app", "./dist"]
+    server: {
+      baseDir: "dist",
+      index: "../app/index.html"
+    }
   });
 
   gulp.watch("app/scss/*.scss", ["sass"]);
+  gulp.watch("bower_components/bootstrap/dist/css/*.css", ["bootstrap"]);
   gulp.watch("app/*.html").on("change", browserSync.reload);
-  gulp.watch("app/js/*.js", ["js-watch"]);
+  gulp.watch(["app/js/*.js", "bower.json", "bower_components/**/*"], ["js-watch"]);
 });
 
 // Compile sass into CSS & auto-inject into browsers
@@ -71,8 +78,42 @@ gulp.task("sass", function() {
     .pipe(browserSync.stream({match: "**/*.css"}));
 });
 
-gulp.task("js", function() {
-  return gulp.src("app/js/*.js")
+// gulp.task("js", function() {
+//   return gulp.src("app/js/*.js")
+//     .pipe(sourcemaps.init())
+//     .pipe(concat("index.js"))
+//     .pipe(uglify())
+//     .pipe(sourcemaps.write("."))
+//     .pipe(gulp.dest("dist/js"));
+// });
+
+gulp.task("bootstrap", function() {
+  var filterCSS = gulpFilter("**/*.css*", {restore: false});
+  return gulp.src("./bower.json")
+    .pipe(mainBowerFiles({
+      overrides: {
+        bootstrap: {
+          main: ["dist/css/*.min.*", "dist/fonts/*.*"]
+        }
+      }
+    }))
+    .pipe(filterCSS)
+    .pipe(gulp.dest("dist/libs"))
+    .pipe(browserSync.stream({match: "**/*.css"}));
+});
+
+gulp.task("js", function () {
+  var filterJS = gulpFilter("**/*.js", {restore: false});
+  return gulp.src("./bower.json")
+    .pipe(mainBowerFiles({
+      overrides: {
+        bootstrap: {
+          main: ["dist/js/bootstrap.js"]
+        }
+      }
+    }))
+    .pipe(filterJS)
+    .pipe(addsrc.append("app/js/*.js"))
     .pipe(sourcemaps.init())
     .pipe(concat("index.js"))
     .pipe(uglify())
