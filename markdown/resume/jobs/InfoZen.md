@@ -1,5 +1,5 @@
-# InfoZen
-## April 2013 - August 2014
+## InfoZen
+### April 2013 - August 2014
 * Worked extensively with EC2, RDS, Route53, IAM, EBS, S3, VPC, CloudFront,
 * and CloudWatch.
 * Managed Linux and Windows cloud servers through SSH, RDP, shell scripting,
