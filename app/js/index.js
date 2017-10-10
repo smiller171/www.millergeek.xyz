@@ -44,26 +44,22 @@ axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/m
   headers: {"Accept": "application/vnd.github.v3.raw"}
 })
   .then(function (response) {
-    console.log(response);
     window.resume.qualifications.markdown = response.data;
     window.resume.qualifications.html = conv.makeHtml(response.data);
   })
   .catch(function (error) {
-    console.log(error);
+    console.error(error);
   });
 
-axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/jobs?ref=vue", {
+axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/jobs", {
   headers: {"Accept": "application/vnd.github.v3.raw"}
 })
   .then(function (response) {
-    console.log(response);
     response.data.forEach(function(file) {
-      console.log(file);
-      axios.get(`https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/${file.path}?ref=vue`, {
+      axios.get(`https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/${file.path}`, {
         headers: {"Accept": "application/vnd.github.v3.raw"}
       })
         .then(function (response) {
-          console.log(response);
           window.resume.jobs.push({
             markdown: response.data,
             html: conv.makeHtml(response.data),
@@ -86,7 +82,7 @@ axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/m
     // window.resume.qualifications.html = conv.makeHtml(response.data);
   })
   .catch(function (error) {
-    console.log(error);
+    console.error(error);
   });
 
 // Tooltips
