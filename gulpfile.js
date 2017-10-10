@@ -18,6 +18,7 @@ var imagemin = require("gulp-image");
 var mainBowerFiles = require("gulp-main-bower-files");
 var gulpFilter = require("gulp-filter");
 var addsrc = require("gulp-add-src");
+var replace = require("gulp-replace");
 
 gulp.task("build", ["sass", "js", "copy", "markdown", "imageMin"]);
 gulp.task("deploy", function () {
@@ -117,7 +118,9 @@ gulp.task("markdown-watch", ["markdown"], function (done) {
 });
 
 gulp.task("copy", function () {
-  return gulp.src(["app/index.html", "app/manifest.json"]).pipe(gulp.dest("dist"));
+  return gulp.src(["app/index.html", "app/manifest.json"])
+    .pipe(replace("https://vuejs.org/js/vue.js", "https://vuejs.org/js/vue.min.js"))
+    .pipe(gulp.dest("dist"));
 });
 
 gulp.task("markdown", function () {
