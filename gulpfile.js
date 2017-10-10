@@ -1,8 +1,9 @@
 /*eslint-env node*/
 var gulp = require("gulp");
+// var gutil = require("gulp-util");
 var browserSync = require("browser-sync").create();
 var sass = require("gulp-sass");
-var uglify = require("gulp-uglify");
+// var uglify = require("gulp-uglify");
 var postcss = require("gulp-postcss");
 var sourcemaps = require("gulp-sourcemaps");
 var autoprefixer = require("autoprefixer");
@@ -18,7 +19,7 @@ var mainBowerFiles = require("gulp-main-bower-files");
 var gulpFilter = require("gulp-filter");
 var addsrc = require("gulp-add-src");
 
-gulp.task("build", ["sass", "js", "bootstrap", "copy", "imageMin"]);
+gulp.task("build", ["sass", "js", "copy", "markdown", "imageMin"]);
 gulp.task("deploy", function () {
   var publisher = awspublish.create({
     region: "us-east-1",
@@ -63,36 +64,46 @@ gulp.task("serve", ["build"], function () {
   gulp.watch([
     "app/js/*.js", "bower.json", "bower_components/**/*"
   ], ["js-watch"]);
+  gulp.watch([
+    "markdown/**/*"
+  ], ["markdown-watch"]);
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task("sass", function () {
-  return gulp.src("app/scss/*.scss").pipe(sourcemaps.init()).pipe(sass()).pipe(postcss([autoprefixer()])).pipe(concat("style.css")).pipe(cleanCss()).pipe(sourcemaps.write(".")).pipe(gulp.dest("dist/css")).pipe(browserSync.stream({match: "**/*.css"}));
+  return gulp.src("app/scss/*.scss")
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(postcss([autoprefixer()]))
+    .pipe(concat("style.css"))
+    .pipe(cleanCss())
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("dist/css"))
+    .pipe(browserSync.stream({match: "**/*.css"}));
 });
 
-// gulp.task("js", function() {   return gulp.src("app/js/*.js")     .pipe(sourcemaps.init())
-// .pipe(concat("index.js"))     .pipe(uglify())     .pipe(sourcemaps.write("."))     .pipe(gulp.dest("dist/js")); });
-
-gulp.task("bootstrap", function () {
-  var filterCSS = gulpFilter("**/*.css*", {restore: false});
-  return gulp.src("./bower.json").pipe(mainBowerFiles({
-    overrides: {
-      bootstrap: {
-        main: ["dist/css/*.min.*", "dist/fonts/*.*"]
-      }
-    }
-  })).pipe(filterCSS).pipe(gulp.dest("dist/libs")).pipe(browserSync.stream({match: "**/*.css"}));
-});
+// gulp.task("bootstrap", function () {
+//   var filterCSS = gulpFilter("**/*.css*", {restore: false});
+//   return gulp.src("./bower.json").pipe(mainBowerFiles({
+//     overrides: {
+//       bootstrap: {
+//         main: ["dist/css/*.min.*", "dist/fonts/*.*"]
+//       }
+//     }
+//   })).pipe(filterCSS).pipe(gulp.dest("dist/libs")).pipe(browserSync.stream({match: "**/*.css"}));
+// });
 
 gulp.task("js", function () {
   var filterJS = gulpFilter("**/*.js", {restore: false});
-  return gulp.src("./bower.json").pipe(mainBowerFiles({
-    overrides: {
-      bootstrap: {
-        main: ["dist/js/bootstrap.js"]
-      }
-    }
-  })).pipe(filterJS).pipe(addsrc.append("app/js/*.js")).pipe(sourcemaps.init()).pipe(concat("index.js")).pipe(uglify()).pipe(sourcemaps.write(".")).pipe(gulp.dest("dist/js"));
+  return gulp.src("./bower.json").pipe(mainBowerFiles())
+    .pipe(filterJS)
+    .pipe(addsrc.append("app/js/*.js"))
+    .pipe(sourcemaps.init())
+    .pipe(concat("index.js"))
+    // .pipe(uglify())
+    // .on("error", function (err) { gutil.log(gutil.colors.red("[Error]"), err.toString()); })
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("dist/js"));
 });
 
 gulp.task("js-watch", ["js"], function (done) {
@@ -100,8 +111,17 @@ gulp.task("js-watch", ["js"], function (done) {
   done();
 });
 
+gulp.task("markdown-watch", ["markdown"], function (done) {
+  browserSync.reload();
+  done();
+});
+
 gulp.task("copy", function () {
   return gulp.src(["app/index.html", "app/manifest.json"]).pipe(gulp.dest("dist"));
+});
+
+gulp.task("markdown", function () {
+  return gulp.src(["markdown/**/*"]).pipe(gulp.dest("dist/markdown"));
 });
 
 gulp.task("imageMin", function () {
