@@ -139,7 +139,7 @@
       </b-row>
       <!-- Jobs -->
       <b-row class="justify-content-center">
-        <b-col md="10" lg="6" xl="4" class="pb-3 d-flex" v-for="job in jobs">
+        <b-col md="10" lg="6" xl="4" class="pb-3 d-flex" v-for="job in jobs" :key="job.file">
           <b-card class="z2">
             <b-card-body v-html="job.html"></b-card-body>
           </b-card>
