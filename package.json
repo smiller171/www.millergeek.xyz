@@ -4,7 +4,10 @@
   "description": "Personal Website",
   "main": "app/js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "bower install",
+    "lint": "eslint app",
+    "build": "gulp build",
+    "deploy": "gulp deploy"
   },
   "repository": {
     "type": "git",
@@ -34,12 +37,8 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "merge-stream": "^1.0.1"
   },
-  "scripts": {
-    "postinstall": "bower install",
-    "lint": "eslint app",
-    "build": "gulp build",
-    "deploy": "gulp deploy"
-  }
+  "babel": { "presets": ["es2015"] }
 }

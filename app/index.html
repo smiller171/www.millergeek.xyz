@@ -29,9 +29,14 @@
   <link rel="manifest" href="/manifest.json">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Istok+Web|Merienda+One|Rubik">
-  <link rel="stylesheet preload" href="libs/bootstrap/dist/css/bootstrap.min.css" as="style">
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap@next/dist/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+  <!-- <link rel="stylesheet preload" href="libs/bootstrap/dist/css/bootstrap.min.css" as="style"> -->
   <link rel="stylesheet preload" href="css/style.css" as="style">
 
+  <link rel="prefetch" href="https://unpkg.com/vue" as="script">
+  <link rel="prefetch" href="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js" as="script">
+  <link rel="prefetch" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js" as="script">
   <link rel="prefetch" href="js/index.js" as="script">
 
 </head>
@@ -53,9 +58,10 @@
     </li>
   </ul>
 
+  <noscript>Your browser does not support JavaScript! Please enable JavaScript or update your browser to view this page correctly.</noscript>
+
   <!-- Tab panes -->
   <div class="tab-content">
-    <noscript>Your browser does not support JavaScript! Please enable JavaScript or update your browser to view this page correctly.</noscript>
     <!--   about -->
     <div class="tab-pane fade show active container-fluid h-100" id="about" role="tabpanel" aria-labelledby="about-tab">
       <div class="row mt-3">
@@ -122,85 +128,25 @@
       </div>
     </div>
     <!-- resume -->
-    <div class="tab-pane fade container-fluid h-100" id="resume" role="tabpanel" aria-labelledby="resume-tab">
-      <div class="row justify-content-center">
+    <b-container fluid class="tab-pane fade h-100" id="resume" role="tabpanel" aria-labelledby="resume-tab">
+      <b-row class="justify-content-center">
         <!--       Qualifications -->
-        <div class="col-12 col-md-10 col-lg-8 col-xl-6 py-3">
-          <div class="card z2">
-            <div class="card-body">
-              <h2 class="card-title">Qualifications</h2>
-              <ul class="card-text pl-3">
-                <li>4 years DevOps experience</li>
-                <li>Expert in modern DevOps tools including Docker</li>
-                <li>Expert with configuration management tools, especially Ansible</li>
-                <li>Expert in AWS infrastructure</li>
-                <li>Experience doing frontend development with Bootstrap and JS</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <!--       SpaceFlight Industries -->
-        <div class="col-md-10 col-lg-6 col-xl-4 pb-3 d-flex">
-          <div class="card z2">
-            <div class="card-body">
-              <h2 class="card-title">SpaceFlight Industries</h2>
-              <h3 class="card-subtitle text-muted h6">February 2016 - Present</h3>
-              <ul class="card-text pl-3">
-                <li>Working heavily with Docker using ECS</li>
-                <li>Automated complex infrastructure with CloudFormation</li>
-                <li>Migrated a large CloudFormation codebase from JSON to YAML</li>
-                <li>Integrated infrastructure with new parent company through acquisition and reorg</li>
-                <li>Architected physical network for performance and easy access to cloud resources</li>
-                <li>Wrote a custom tool for tracking software dependencies using Lambda and DynamoDB</li>
-                <li>Took responsibility for investigating better monitoring tools</li>
-                <li>Lead the effort to implement SSO across our toolchain</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!--       Content Analyst -->
-        <div class="col-md-10 col-lg-6 col-xl-4 pb-3 d-flex">
-          <div class="card z2">
-            <div class="card-body">
-              <h2 class="card-title">Content Analyst</h2>
-              <h3 class="card-subtitle text-muted h6">September 2014 - January 2016</h3>
-              <ul class="card-text pl-3">
-                <li>Automated environment creation, updates, and destruction with Ansible</li>
-                <li>Designed and implemented CI/CD workflow with Jenkins and Ansible Tower</li>
-                <li>Maintained 0 production downtime for over a year using autoscaling</li>
-                <li>Drove decisions around automation and monitoring tooling</li>
-                <li>Managed DevOps as a one-man team</li>
-                <li>Trained Developers in Ansible</li>
-                <li>Took ownership of infrastructure security</li>
-                <li>Worked heavily with Docker</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!--       InfoZen -->
-        <div class="col-md-10 col-lg-6 col-xl-4 pb-3 d-flex">
-          <div class="card z2">
-            <div class="card-body">
-              <h2 class="card-title">InfoZen</h2>
-              <h3 class="card-subtitle text-muted h6">April 2013 - August 2014</h3>
-              <ul class="card-text pl-3">
-                <li>Worked extensively with EC2, RDS, Route53, IAM, EBS, S3, VPC, CloudFront, </li>and CloudWatch.
-                <li>Managed Linux and Windows cloud servers through SSH, RDP, shell scripting, </li>and Ansible
-                <li>Helped design automation for application deployments and updates using </li>Ansible and Git
-                <li>Performed basic Oracle and MySQL database administration</li>
-                <li>Set up Atlassian Stash for locally hosted Git solution</li>
-                <li>Familiarized with other Atlassian products, including Jira</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6"></div>
-      </div>
-    </div>
+        <b-col cols="12" md="10" lg="8" xl="6" class="py-3">
+          <b-card class="z2">
+            <b-card-body v-html="qualifications.html"></b-card-body>
+          </b-card>
+        </b-col>
+      </b-row>
+      <!-- Jobs -->
+      <b-row class="justify-content-center">
+        <b-col md="10" lg="6" xl="4" class="pb-3 d-flex" v-for="job in jobs">
+          <b-card class="z2">
+            <b-card-body v-html="job.html"></b-card-body>
+          </b-card>
+        </b-col>
+        <b-col col></b-col>
+      </b-row>
+    </b-container>
     <!-- contact -->
     <div class="tab-pane fade container-fluid h-100" id="contact" role="tabpanel" aria-labelledby="contact-tab">
       <div class="row align-items-center h-100">
@@ -261,7 +207,10 @@
     </div>
   </footer>
 
-  <script async src="js/index.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+  <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+  <script src="js/index.js"></script>
 
 </body>
 
