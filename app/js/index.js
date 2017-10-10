@@ -63,7 +63,8 @@ axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/m
           window.resume.jobs.push({
             markdown: response.data,
             html: conv.makeHtml(response.data),
-            date: getDate(response.data)
+            date: getDate(response.data),
+            file: file.name
           });
         })
         .then(function() {
