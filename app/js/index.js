@@ -59,7 +59,7 @@ window.about = new Vue({
   }
 });
 
-axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/about/about.md?ref=vue", {
+axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/about/about.md", {
   headers: {"Accept": "application/vnd.github.v3.raw"}
 })
   .then(function (response) {
@@ -123,26 +123,41 @@ $(function () {
 
 $("#contactForm").submit(function (e) {
   e.preventDefault();
-  let payload = {
-    "bodyData": $("#contactBody").val(),
-    "subjectData": $("#contactSubject").val(),
-    "replyToAddresses": [$("#contactEmail").val()]
-  };
-  console.log(payload);
-  $.post("https://api.millergeek.xyz/sendmail", payload)
-    .done(function () {
-      console.log("sent successfully");
-      $("#emailSuccess").addClass("show");
-      setTimeout(function () {
-        $("#emailSuccess").removeClass("show");
-      }, 2000);
-    }).fail(function (err) {
-      console.error("Failed: ", err);
-      $("#emailFail").addClass("show");
-      setTimeout(function () {
-        $("#emailFail").removeClass("show");
-      }, 2000);
+  new Promise(function(resolve) {
+    resolve({
+      "bodyData": $("#contactBody").val(),
+      "subjectData": $("#contactSubject").val(),
+      "replyToAddress": $("#contactEmail").val()
     });
+  }).then(function (payload) {
+    console.log(payload);
+    $.post("https://api.millergeek.xyz/sendmail", payload)
+      .done(function () {
+        console.log("sent successfully");
+        $("#emailSuccess").removeClass("d-none");
+        setTimeout(function () {
+          $("#emailSuccess").addClass("show");
+        }, 10);
+        setTimeout(function () {
+          $("#emailSuccess").removeClass("show");
+          setTimeout(function () {
+            $("#emailSuccess").addClass("d-none");
+          }, 150);
+        }, 2000);
+      }).fail(function (err) {
+        console.error("Failed: ", err);
+        $("#emailFail").removeClass("d-none");
+        setTimeout(function () {
+          $("#emailFail").addClass("show");
+        }, 10);
+        setTimeout(function () {
+          $("#emailFail").removeClass("show");
+          setTimeout(function () {
+            $("#emailFail").addClass("d-none");
+          }, 150);
+        }, 2000);
+      });
+  });
 });
 
 // Ripple-effect animation
