@@ -59,7 +59,7 @@ window.about = new Vue({
   }
 });
 
-axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/about/about.md?ref=vue", {
+axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/about/about.md", {
   headers: {"Accept": "application/vnd.github.v3.raw"}
 })
   .then(function (response) {
@@ -132,15 +132,27 @@ $("#contactForm").submit(function (e) {
   $.post("https://api.millergeek.xyz/sendmail", payload)
     .done(function () {
       console.log("sent successfully");
-      $("#emailSuccess").addClass("show");
+      $("#emailSuccess").removeClass("d-none");
+      setTimeout(function () {
+        $("#emailSuccess").addClass("show");
+      }, 10);
       setTimeout(function () {
         $("#emailSuccess").removeClass("show");
+        setTimeout(function () {
+          $("#emailSuccess").addClass("d-none");
+        }, 150);
       }, 2000);
     }).fail(function (err) {
       console.error("Failed: ", err);
-      $("#emailFail").addClass("show");
+      $("#emailFail").removeClass("d-none");
+      setTimeout(function () {
+        $("#emailFail").addClass("show");
+      }, 10);
       setTimeout(function () {
         $("#emailFail").removeClass("show");
+        setTimeout(function () {
+          $("#emailFail").addClass("d-none");
+        }, 150);
       }, 2000);
     });
 });
