@@ -70,7 +70,7 @@ axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/m
     console.error(error);
   });
 
-axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/qualifications.md?ref=vue", {
+axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/qualifications.md", {
   headers: {"Accept": "application/vnd.github.v3.raw"}
 })
   .then(function (response) {
