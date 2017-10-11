@@ -19,34 +19,45 @@ var mainBowerFiles = require("gulp-main-bower-files");
 var gulpFilter = require("gulp-filter");
 var addsrc = require("gulp-add-src");
 var replace = require("gulp-replace");
+var git = require("gulp-git");
 
 gulp.task("build", ["sass", "js", "copy", "markdown", "imageMin"]);
 gulp.task("deploy", function () {
-  var publisher = awspublish.create({
-    region: "us-east-1",
-    params: {
-      Bucket: "www.millergeek.xyz"
+  git.revParse({args:"--abbrev-ref HEAD"}, function (err, branch) {
+    if (branch == "master") {
+      var target = "www.millergeek.xyz";
+      console.log("Deploying to Prod");
     }
-  }, {cacheFileName: "your-cache-location"});
+    else {
+      var target = "dev.millergeek.xyz";
+      console.log("Deploying to Dev");
+    }
+    var publisher = awspublish.create({
+      region: "us-east-1",
+      params: {
+        Bucket: target
+      }
+    }, {cacheFileName: `.cache/${target}`});
 
-  // define custom headers
-  var headers = {
-    "Cache-Control": "max-age=17280000, no-transform, public"
-  };
+    // define custom headers
+    var headers = {
+      "Cache-Control": "max-age=17280000, no-transform, public"
+    };
 
-  return merge(gzip, plain)
-  // publisher will add Content-Length, Content-Type and headers specified above If not specified it will set x-amz-acl to
-  // public-read by default
-    .pipe(parallelize(publisher.publish(headers), 10))
+    return merge(gzip, plain)
+    // publisher will add Content-Length, Content-Type and headers specified above If not specified it will set x-amz-acl to
+    // public-read by default
+      .pipe(parallelize(publisher.publish(headers), 10))
 
-  // Keep our bucket in-sync with our local files
-    .pipe(publisher.sync())
+    // Keep our bucket in-sync with our local files
+      .pipe(publisher.sync())
 
-  // create a cache file to speed up consecutive uploads
-    .pipe(publisher.cache())
+    // create a cache file to speed up consecutive uploads
+      .pipe(publisher.cache())
 
-  // print upload updates to console
-    .pipe(awspublish.reporter());
+    // print upload updates to console
+      .pipe(awspublish.reporter());
+  });
 });
 
 // Static Server + watching scss/html files
