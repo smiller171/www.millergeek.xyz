@@ -123,23 +123,26 @@ $(function () {
 
 $("#contactForm").submit(function (e) {
   e.preventDefault();
-  $.post("https://api.millergeek.xyz/sendmail", {
+  let payload = {
     "bodyData": $("#contactBody").val(),
     "subjectData": $("#contactSubject").val(),
     "replyToAddresses": [$("#contactEmail").val()]
-  }).done(function () {
-    console.log("sent successfully");
-    $("#emailSuccess").addClass("show");
-    setTimeout(function () {
-      $("#emailSuccess").removeClass("show");
-    }, 2000);
-  }).fail(function (err) {
-    console.error("Failed: ", err);
-    $("#emailFail").addClass("show");
-    setTimeout(function () {
-      $("#emailFail").removeClass("show");
-    }, 2000);
-  });
+  };
+  console.log(payload);
+  $.post("https://api.millergeek.xyz/sendmail", payload)
+    .done(function () {
+      console.log("sent successfully");
+      $("#emailSuccess").addClass("show");
+      setTimeout(function () {
+        $("#emailSuccess").removeClass("show");
+      }, 2000);
+    }).fail(function (err) {
+      console.error("Failed: ", err);
+      $("#emailFail").addClass("show");
+      setTimeout(function () {
+        $("#emailFail").removeClass("show");
+      }, 2000);
+    });
 });
 
 // Ripple-effect animation
