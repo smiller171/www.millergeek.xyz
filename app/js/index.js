@@ -40,6 +40,36 @@ window.resume = new Vue({
   }
 });
 
+window.about = new Vue({
+  el: "#about",
+  data: {
+    about: {
+      html: null,
+      markdown: null
+    },
+    tools: {
+      html: null,
+      markdown: null
+    }
+  },
+  computed: {
+    showAlert() {
+      return this.name.length > 4 ? true : false;
+    }
+  }
+});
+
+axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/about/about.md?ref=vue", {
+  headers: {"Accept": "application/vnd.github.v3.raw"}
+})
+  .then(function (response) {
+    window.about.about.markdown = response.data;
+    window.about.about.html = conv.makeHtml(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+
 axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/qualifications.md?ref=vue", {
   headers: {"Accept": "application/vnd.github.v3.raw"}
 })
