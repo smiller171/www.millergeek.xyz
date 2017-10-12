@@ -23,7 +23,7 @@ var git = require("gulp-git");
 var gulpif = require("gulp-if");
 
 gulp.task("build", ["sass", "js", "copy", "markdown", "imageMin"]);
-gulp.task("deploy", function () {
+gulp.task("deploy", ["keybaseDeploy"], function () {
   git.revParse({args:"--abbrev-ref HEAD"}, function (err, branch) {
     if (branch == "master") {
       var target = "www.millergeek.xyz";
@@ -57,11 +57,14 @@ gulp.task("deploy", function () {
       .pipe(publisher.cache())
 
     // print upload updates to console
-      .pipe(awspublish.reporter())
-
-    // copy to keybase
-      .pipe(gulpif(! process.env.CI, gulp.dest("/keybase/public/smiller171")));
+      .pipe(awspublish.reporter());
   });
+});
+
+gulp.task("keybaseDeploy", function () {
+  return gulp.src("dist/**/*", { dot: true })
+    // .pipe(gulp.dest("/keybase/public/smiller171"));
+    .pipe(gulpif(! process.env.CI, gulp.dest("/keybase/public/smiller171")));
 });
 
 // Static Server + watching scss/html files
@@ -97,17 +100,6 @@ gulp.task("sass", function () {
     .pipe(gulp.dest("dist/css"))
     .pipe(browserSync.stream({match: "**/*.css"}));
 });
-
-// gulp.task("bootstrap", function () {
-//   var filterCSS = gulpFilter("**/*.css*", {restore: false});
-//   return gulp.src("./bower.json").pipe(mainBowerFiles({
-//     overrides: {
-//       bootstrap: {
-//         main: ["dist/css/*.min.*", "dist/fonts/*.*"]
-//       }
-//     }
-//   })).pipe(filterCSS).pipe(gulp.dest("dist/libs")).pipe(browserSync.stream({match: "**/*.css"}));
-// });
 
 gulp.task("js", function () {
   var filterJS = gulpFilter("**/*.js", {restore: false});
