@@ -20,6 +20,7 @@ var gulpFilter = require("gulp-filter");
 var addsrc = require("gulp-add-src");
 var replace = require("gulp-replace");
 var git = require("gulp-git");
+var gulpif = require("gulp-if");
 
 gulp.task("build", ["sass", "js", "copy", "markdown", "imageMin"]);
 gulp.task("deploy", function () {
@@ -59,11 +60,7 @@ gulp.task("deploy", function () {
       .pipe(awspublish.reporter())
 
     // copy to keybase
-      .pipe( function () {
-        if (! process.env.CI) {
-          gulp.dest("/keybase/public/smiller171");
-        }
-      });
+      .pipe(gulpif(! process.env.CI, gulp.dest("/keybase/public/smiller171")));
   });
 });
 
