@@ -56,7 +56,14 @@ gulp.task("deploy", function () {
       .pipe(publisher.cache())
 
     // print upload updates to console
-      .pipe(awspublish.reporter());
+      .pipe(awspublish.reporter())
+
+    // copy to keybase
+      .pipe( function () {
+        if (! process.env.CI) {
+          gulp.dest("/keybase/public/smiller171");
+        }
+      });
   });
 });
 
@@ -91,8 +98,7 @@ gulp.task("sass", function () {
     .pipe(cleanCss())
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("dist/css"))
-    .pipe(browserSync.stream({match: "**/*.css"}))
-    .pipe(gulp.dest("/keybase/public/smiller171/css"));
+    .pipe(browserSync.stream({match: "**/*.css"}));
 });
 
 // gulp.task("bootstrap", function () {
@@ -116,8 +122,7 @@ gulp.task("js", function () {
     // .pipe(uglify())
     // .on("error", function (err) { gutil.log(gutil.colors.red("[Error]"), err.toString()); })
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("dist/js"))
-    .pipe(gulp.dest("/keybase/public/smiller171/js"));
+    .pipe(gulp.dest("dist/js"));
 });
 
 gulp.task("js-watch", ["js"], function (done) {
@@ -133,21 +138,18 @@ gulp.task("markdown-watch", ["markdown"], function (done) {
 gulp.task("copy", function () {
   return gulp.src(["app/index.html", "app/manifest.json", "app/.well-known*/**"])
     .pipe(replace("https://vuejs.org/js/vue.js", "https://vuejs.org/js/vue.min.js"))
-    .pipe(gulp.dest("dist"))
-    .pipe(gulp.dest("/keybase/public/smiller171"));
+    .pipe(gulp.dest("dist"));
 });
 
 gulp.task("markdown", function () {
   return gulp.src(["markdown/**/*"])
-    .pipe(gulp.dest("dist/markdown"))
-    .pipe(gulp.dest("/keybase/public/smiller171/markdown"));
+    .pipe(gulp.dest("dist/markdown"));
 });
 
 gulp.task("imageMin", function () {
   gulp.src(["app/images*/**/*", "app/favicon.*"])
     .pipe(imagemin())
-    .pipe(gulp.dest("dist"))
-    .pipe(gulp.dest("/keybase/public/smiller171"));
+    .pipe(gulp.dest("dist"));
 });
 
 gulp.task("default", ["build"]);
