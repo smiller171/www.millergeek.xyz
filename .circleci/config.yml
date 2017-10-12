@@ -44,6 +44,7 @@ jobs:
           key: v1-deps-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+            - .cache
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
