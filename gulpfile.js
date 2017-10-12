@@ -129,7 +129,7 @@ gulp.task("markdown-watch", ["markdown"], function (done) {
 });
 
 gulp.task("copy", function () {
-  return gulp.src(["app/index.html", "app/manifest.json"])
+  return gulp.src(["app/index.html", "app/manifest.json", "app/.well-known*/**"])
     .pipe(replace("https://vuejs.org/js/vue.js", "https://vuejs.org/js/vue.min.js"))
     .pipe(gulp.dest("dist"));
 });
