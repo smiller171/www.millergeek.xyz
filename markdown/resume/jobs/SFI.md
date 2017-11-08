@@ -1,6 +1,6 @@
 ## SpaceFlight Industries
 ### February 2016 - October 2017
-* Working heavily with Docker using ECS
+* Worked heavily with Docker using ECS
 * Automated complex infrastructure with CloudFormation
 * Migrated a large CloudFormation codebase from JSON to YAML
 * Integrated infrastructure with new parent company through acquisition and reorg
