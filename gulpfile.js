@@ -74,7 +74,8 @@ gulp.task("serve", ["build"], function () {
     server: {
       baseDir: "dist",
       index: "../app/index.html"
-    }
+    },
+    port: 3003
   });
 
   gulp.watch("app/scss/*.scss", ["sass"]);
