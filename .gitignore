@@ -16,5 +16,6 @@ dist
 # unwanted
 react-contactform
 your-cache-location
-.cache/*
+.cache
 reports
+.idea
