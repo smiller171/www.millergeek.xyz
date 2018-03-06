@@ -1,6 +1,6 @@
 {
   "name": "www.millergeek.xyz",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Personal Website",
   "author": "Scott Miller <scott@millergeek.xyz>",
   "private": true,
@@ -15,19 +15,24 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.4.0",
+    "vuetify": "^1.0.4",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@storybook/vue": "^3.3.14",
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0",
     "@storybook/addon-actions": "^3.3.14",
     "@storybook/addon-links": "^3.3.14",
     "@storybook/addons": "^3.3.14",
+    "@storybook/vue": "^3.3.14",
     "babel-core": "^6.26.0",
-    "babel-preset-vue": "^2.0.1"
+    "babel-eslint": "^8.2.2",
+    "babel-preset-vue": "^2.0.1",
+    "eslint": "^4.18.2",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.3.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.2"
   }
 }

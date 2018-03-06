@@ -6,7 +6,7 @@
         www.millergeek.xyz
       </h1>
       <h2 class="subtitle">
-        Personal Website
+        Resume
       </h2>
       <div class="links">
         <a
@@ -23,13 +23,13 @@
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import AppLogo from '@/components/AppLogo.vue';
 
 export default {
   components: {
     AppLogo
   }
-}
+};
 </script>
 
 <style>

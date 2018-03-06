@@ -4,7 +4,6 @@ env:
   jquery: false
   node: true
 parserOptions:
-  sourceType: script
   parser: babel-eslint
 extends:
   - plugin:vue/recommended
@@ -19,13 +18,14 @@ rules:
     - unix
   quotes:
     - error
-    - double
+    - single
   semi:
     - error
     - always
   no-console:
     - warn
-    - allow: error
+    - allow:
+      - error
   no-unused-vars:
     - error
   no-undef:

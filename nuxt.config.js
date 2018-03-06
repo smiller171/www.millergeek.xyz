@@ -1,4 +1,5 @@
 module.exports = {
+  srcDir: 'app/',
   /*
   ** Headers of the page
   */
@@ -10,8 +11,9 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Personal Website' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Merienda+One|Rubik|Istok+Web' }
+    ],
   },
   /*
   ** Customize the progress bar color
@@ -31,8 +33,8 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
     }
   }
-}
+};
