@@ -1,13 +1,15 @@
 <template>
   <v-app>
     <v-toolbar
-      tabs
       dark
+      tabs
       color="primary darken-2"
       class="header"
-      fixed
     >
-      <h1 class="header-title">
+      <h1 
+        id="header-title"
+        class="header-title" 
+      >
         <span class="name">Scott </span><span class="name">Miller</span>
       </h1>
       <v-tabs
@@ -29,7 +31,7 @@
         </v-tab>
       </v-tabs>
     </v-toolbar>
-    <nuxt/>
+    <nuxt id="nuxt"/>
     <v-footer
       class="footer"
       dark
@@ -46,7 +48,10 @@
           :key="icon.key"
           class="iconDiv"
         >
-          <nuxt-link :to="icon.target">
+          <a
+            :href="icon.target"
+            target="_blank"
+          >
             <img
               :title="icon.title"
               :src="icon.img" 
@@ -54,7 +59,7 @@
               height="40"
               class="iconImg"
             >
-          </nuxt-link>
+          </a>
         </div>
       </div>
     </v-footer>
