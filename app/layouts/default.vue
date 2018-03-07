@@ -6,10 +6,7 @@
       color="primary darken-2"
       class="header"
     >
-      <h1 
-        id="header-title"
-        class="header-title" 
-      >
+      <h1 class="header-title">
         <word-mark/>
       </h1>
       <v-tabs
@@ -18,9 +15,7 @@
         color="primary"
         grow
       >
-        <v-tabs-slider
-          color="accent"
-        />
+        <v-tabs-slider color="accent"/>
         <v-tab
           v-for="item in tabs"
           :key="item.key"
@@ -43,33 +38,24 @@
         <word-mark/>
       </div>
       <div class="footer-right">
-        <div
+        <social-icon
           v-for="icon in socialIcons"
           :key="icon.key"
-          class="iconDiv"
-        >
-          <a
-            :href="icon.target"
-            target="_blank"
-          >
-            <img
-              :title="icon.title"
-              :src="icon.img" 
-              :alt="icon.title"
-              height="40"
-              class="iconImg"
-            >
-          </a>
-        </div>
+          :target="icon.target"
+          :src="icon.img"
+          :title="icon.title"
+          :alt="icon.title"
+        />
       </div>
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import 'vuetify/dist/vuetify.min.css';
+import SocialIcon from '@/components/SocialIcon';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css';
 import WordMark from '@/components/WordMark';
 
 Vue.use(Vuetify, {
@@ -84,6 +70,7 @@ Vue.use(Vuetify, {
 
 export default {
   components: {
+    SocialIcon,
     WordMark
   },
   data() {
@@ -172,19 +159,6 @@ export default {
 .footer-right {
   display: flex;
   justify-content: flex-end;
-}
-
-.iconDiv {
-  // height: auto;
-  text-align: center;
-  margin-right: 8px;
-  &:last-of-type {
-    margin-right: 0;
-  }
-}
-
-.iconImg {
-  vertical-align: middle;
 }
 </style>
 

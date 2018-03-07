@@ -33,3 +33,5 @@ rules:
   func-call-spacing:
     - error
     - never
+  sort-imports:
+    - warn
