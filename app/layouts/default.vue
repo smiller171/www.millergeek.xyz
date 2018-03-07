@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="myapp">
     <v-toolbar
       dark
       tabs
@@ -53,6 +53,7 @@
 
 <script>
 import 'vuetify/dist/vuetify.min.css';
+import AsyncComputed from 'vue-async-computed';
 import SocialIcon from '@/components/SocialIcon';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
@@ -65,6 +66,7 @@ Vue.use(Vuetify, {
     accent: '#00b0ff'
   }
 });
+Vue.use(AsyncComputed);
 
 
 
@@ -174,7 +176,6 @@ $docker-color: #0db7ed;
 }
 
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -187,6 +188,11 @@ html {
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.myapp {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
 }
 
 </style>

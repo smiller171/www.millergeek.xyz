@@ -4,12 +4,20 @@
       :height="imgHeight"
       src="/images/Scott-Headshot.jpg"
     />
-    <v-card-title primary-title>About Me</v-card-title>
+    <markdown
+      file="/markdown/about/about.md"
+      class="card-body"
+    />
   </v-card>
 </template>
 
 <script>
+import Markdown from '@/components/Markdown';
+
 export default {
+  components: {
+    Markdown
+  },
   data() {
     return {
       imgWidth: 0

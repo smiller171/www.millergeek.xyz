@@ -15,7 +15,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "nuxt": "^1.4.0",
+    "showdown": "^1.8.6",
+    "vue-async-computed": "^3.3.1",
     "vuetify": "^1.0.5",
     "webfontloader": "^1.6.28"
   },
