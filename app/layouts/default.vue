@@ -10,7 +10,7 @@
         id="header-title"
         class="header-title" 
       >
-        <span class="name">Scott </span><span class="name">Miller</span>
+        <word-mark/>
       </h1>
       <v-tabs
         slot="extension"
@@ -40,7 +40,7 @@
       height="60px"
     >
       <div class="footer-left">
-        <span class="name">Scott </span><span class="name">Miller</span>
+        <word-mark/>
       </div>
       <div class="footer-right">
         <div
@@ -70,6 +70,7 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
+import WordMark from '@/components/WordMark';
 
 Vue.use(Vuetify, {
   theme: {
@@ -82,6 +83,9 @@ Vue.use(Vuetify, {
 
 
 export default {
+  components: {
+    WordMark
+  },
   data() {
     return {
       tab: '',
@@ -142,16 +146,6 @@ export default {
   width: 100%;
   text-align: center;
   font-weight: 400;
-}
-.name {
-  display: inline-block;
-  font-family: 'Rubik', sans-serif;
-  white-space: pre;
-  line-height: 1.2;
-  vertical-align: middle;
-  &:first-letter {
-    font-family: 'Merienda One', cursive;
-  }
 }
 
 @media all and (min-width: 465px) {
