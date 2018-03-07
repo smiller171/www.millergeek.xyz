@@ -69,6 +69,7 @@ Vue.use(Vuetify, {
 
 
 export default {
+  transition: 'page',
   components: {
     SocialIcon,
     WordMark
@@ -129,7 +130,6 @@ export default {
   line-height: 1.5;
 }
 .header-title {
-  // height: 100%;
   width: 100%;
   text-align: center;
   font-weight: 400;

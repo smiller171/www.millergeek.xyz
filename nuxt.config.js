@@ -1,5 +1,8 @@
 module.exports = {
   srcDir: 'app/',
+  css: [
+    'assets/main.css'
+  ],
   /*
   ** Headers of the page
   */
@@ -18,7 +21,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+  loading: false,
   /*
   ** Build configuration
   */
