@@ -35,5 +35,3 @@ rules:
     - never
   sort-imports:
     - warn
-  sort-keys:
-    - warn

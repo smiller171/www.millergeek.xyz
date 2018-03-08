@@ -1,64 +1,47 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        www.millergeek.xyz
-      </h1>
-      <h2 class="subtitle">
-        Resume
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+  <main class="main">
+    <div class="qualContainer">
+      <qualifications/>
     </div>
-  </section>
+    <div class="resumeContainer">
+      <resume-item
+        v-for="item in resumeItems"
+        :key="item.key"
+      />
+    </div>
+  </main>
 </template>
 
 <script>
-import AppLogo from '@/components/AppLogo.vue';
-
+import Qualifications from '@/components/Qualifications';
+import ResumeItem from '@/components/ResumeItem';
 export default {
   components: {
-    AppLogo
+    Qualifications,
+    ResumeItem
+  },
+  data() {
+    return {
+      resumeItems: [
+        {
+          key: 'test'
+        }
+      ]
+    };
   }
 };
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
+<style lang="scss" scoped>
+.qualContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 1rem;    
 }
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.resumeContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  padding-top: 0;
 }
 </style>
