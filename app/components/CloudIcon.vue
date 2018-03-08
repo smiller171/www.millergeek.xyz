@@ -1,17 +1,18 @@
 <template>
   <div class="iconDiv">
-    <a
-      :href="target"
-      target="_blank"
+    <v-tooltip 
+      top 
+      offset-overflow
     >
-      <img
-        :title="title"
+      <img 
+        slot="activator"
         :src="src" 
         :alt="alt"
+        :title="title"
         :height="height"
-        class="iconImg"
       >
-    </a>
+      <span>{{ title }}</span>
+    </v-tooltip>
   </div>
 </template>
 
@@ -23,14 +24,10 @@ export default {
       type: String
     },
     height: {
-      default: 40,
+      default: 48,
       type: Number
     },
     src: {
-      required: true,
-      type: String
-    },
-    target: {
       required: true,
       type: String
     },
@@ -44,16 +41,6 @@ export default {
 
 <style lang="scss" scoped>
 .iconDiv {
-  // height: auto;
   text-align: center;
-  margin-right: .25rem;
-  &:last-of-type {
-    margin-right: 0;
-  }
-}
-
-.iconImg {
-  vertical-align: middle;
 }
 </style>
-

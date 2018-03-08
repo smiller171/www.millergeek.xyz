@@ -157,8 +157,8 @@ export default {
   display: flex;
   justify-content: space-between;
   font-size: 1.5rem;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: .5rem;
+  padding-right: .5rem;
   line-height: 60px;
   box-shadow: 0 -2px 4px -1px rgba(0, 0, 0, .2), 0 -4px 5px 0 rgba(0, 0, 0, .14), 0 -1px 10px 0 rgba(0, 0, 0, .12);
 }
