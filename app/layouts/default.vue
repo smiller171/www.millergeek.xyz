@@ -1,5 +1,8 @@
 <template>
-  <v-app class="myapp">
+  <v-app
+    footer
+    class="myapp"
+  >
     <v-toolbar
       dark
       tabs
@@ -26,7 +29,9 @@
         </v-tab>
       </v-tabs>
     </v-toolbar>
-    <nuxt id="nuxt"/>
+    <v-app class="nuxtApp">
+      <nuxt id="nuxt"/>
+    </v-app>
     <v-footer
       class="footer"
       dark
@@ -193,6 +198,17 @@ html {
 .myapp {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
+  overflow: hidden;
+  // margin-bottom: -60px;
+}
+
+.nuxtApp {
+  overflow: scroll;
+  margin-bottom: 60px;
+  min-height: unset;
+  > * {
+    min-height: unset;
+  }
 }
 
 </style>

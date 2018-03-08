@@ -1,16 +1,18 @@
 <template>
   <main class="main">
     <about-summary class="summary"/>
-    <div class="cloud"/>
+    <icon-cloud class="cloud"/>
   </main>
 </template>
 
 <script>
 import AboutSummary from '@/components/Summary';
+import IconCloud from '@/components/IconCloud';
 
 export default {
   components: {
-    AboutSummary
+    AboutSummary,
+    IconCloud
   }
 };
 </script>
@@ -22,8 +24,10 @@ export default {
   flex-wrap: wrap;
   padding: 1rem;
   margin-right: -2rem;
+  margin-top: -1rem;
   > * {
     margin-right: 2rem;
+    margin-top: 1rem;
   }
 }
 .summary {
