@@ -21,13 +21,16 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
   padding: 1rem;
+  margin-right: -2rem;
+  > * {
+    margin-right: 2rem;
+  }
 }
 .summary {
   max-width: 390px;
   flex-basis: 300px;
   flex-shrink: 3;
   flex-grow: 3;
-  padding-right: 2rem;
 }
 .cloud {
   max-width: 530px;
