@@ -1,0 +1,1 @@
+webpackJsonp([3],{jxgb:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var u=n("pL+Y"),l=n("VU/8")(u.a,null,!1,null,null,null);l.options.__file="app/pages/index.vue",t.default=l.exports},"pL+Y":function(e,t,n){"use strict";t.a={fetch:function(e){(0,e.redirect)(307,"/about")}}}});
