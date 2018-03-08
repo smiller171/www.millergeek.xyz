@@ -1,0 +1,2 @@
+## About Me
+I'm a DevOps Engineer and aspiring Web Developer. I live and breathe tech, spending much of my time keeping up with the bleeding edge of infrastructure and security tools. This site is completely serverless. The static files are hosted out of S3, and the content is dynamically loaded from markdown files in GitHub using Vue. The contact form leverages Lambda behind API Gateway to send me email via SES.
