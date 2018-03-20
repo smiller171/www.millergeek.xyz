@@ -10,11 +10,9 @@
       <h1 class="header-title">
         <word-mark/>
       </h1>
-      
     </v-toolbar>
     <v-toolbar
       dark
-      tabs
       height="unset"
       color="primary darken-2"
       class="tabbar"
@@ -156,6 +154,7 @@ export default {
 
 .footer {
   display: flex;
+  width: 100vw;
   justify-content: space-between;
   font-size: 1.5rem;
   padding-left: .5rem;
@@ -200,12 +199,10 @@ html {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
   overflow: visible;
-  // margin-bottom: -60px;
-  // padding-top: 150px;
 }
 
 .nuxtApp {
-  // overflow: scroll;
+  overflow-x: hidden;
   margin-bottom: 60px;
   min-height: unset;
   > * {
