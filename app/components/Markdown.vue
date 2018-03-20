@@ -42,6 +42,10 @@ export default {
   methods: {
     async getHtml(file) {
       const response = await axios.get(file);
+      this.$emit('mdData', {
+        file: this.file,
+        data: response.data
+      });
       return conv.makeHtml(response.data);
     }
   }

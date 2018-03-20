@@ -35,3 +35,4 @@ rules:
     - never
   sort-imports:
     - warn
+    - ignoreCase: true
