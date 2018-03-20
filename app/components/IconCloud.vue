@@ -48,17 +48,17 @@ export default {
         {
           key: 'lambda',
           src: '/images/iconcloud/aws-lambda.svg',
-          title: 'lambda'
+          title: 'Lambda'
         },
         {
           key: 'ec2',
           src: '/images/iconcloud/aws-ec2.svg',
-          title: 'ec2'
+          title: 'EC2'
         },
         {
           key: 'route53',
           src: '/images/iconcloud/aws-route53.svg',
-          title: 'route53'
+          title: 'Route 53'
         },
         {
           key: 'apiGateway',

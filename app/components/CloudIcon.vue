@@ -1,7 +1,8 @@
 <template>
   <div class="iconDiv">
     <v-tooltip 
-      top 
+      top
+      color="primary darken-2"
       offset-overflow
     >
       <img 
