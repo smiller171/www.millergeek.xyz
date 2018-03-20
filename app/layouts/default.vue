@@ -1,19 +1,25 @@
 <template>
   <v-app
-    footer
     class="myapp"
   >
     <v-toolbar
       dark
-      tabs
       color="primary darken-2"
       class="header"
     >
       <h1 class="header-title">
         <word-mark/>
       </h1>
+      
+    </v-toolbar>
+    <v-toolbar
+      dark
+      tabs
+      height="unset"
+      color="primary darken-2"
+      class="tabbar"
+    >
       <v-tabs
-        slot="extension"
         v-model="tab"
         color="primary"
         grow
@@ -193,17 +199,24 @@ html {
 .myapp {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
-  overflow: hidden;
+  overflow: visible;
   // margin-bottom: -60px;
+  // padding-top: 150px;
 }
 
 .nuxtApp {
-  overflow: scroll;
+  // overflow: scroll;
   margin-bottom: 60px;
   min-height: unset;
   > * {
     min-height: unset;
   }
+}
+
+.tabbar {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 
 </style>
