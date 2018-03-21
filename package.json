@@ -7,9 +7,10 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "deploy": "yarn deploy:dev; yarn deploy:prod",
+    "deploy": "yarn deploy:dev; yarn deploy:prod && yarn deploy:keybase",
     "deploy:dev": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "deploy:prod": "sed -i '' 's/gh.millergeek.xyz/millergeek.xyz/g' dist/CNAME; push-dir --dir=dist --branch=master --remote=prod --cleanup",
+    "deploy:keybase": "cp -r dist/ /keybase/public/smiller171/",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
