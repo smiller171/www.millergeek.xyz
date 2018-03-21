@@ -1,7 +1,4 @@
 <script>
-export default {
-  fetch ({ redirect }) {
-    redirect(307, '/about');
-  }
-};
+import About from '~pages/about';
+export default About;
 </script>
