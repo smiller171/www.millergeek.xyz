@@ -24,9 +24,10 @@
       >
         <v-tabs-slider color="accent"/>
         <v-tab
-          v-for="item in tabs"
+          v-for="(item, index) in tabs"
           :key="item.key"
           :to="item.target"
+          :class="{ 'active': index === 0 && tab === '/about'}"
           nuxt
         >
           {{ item.label }}
@@ -73,7 +74,7 @@ export default {
   },
   data() {
     return {
-      tab: '',
+      tab: '/about',
       tabs: [
         {
           key: 'about',
@@ -113,9 +114,18 @@ export default {
         }
       ]
     };
+  },
+  created() {
+
   }
 };
 </script>
+
+<style lang="scss">
+.active a {
+  opacity: 1 !important;
+}
+</style>
 
 <style lang="scss" scoped>
 .header {
