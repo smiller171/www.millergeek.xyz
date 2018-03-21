@@ -26,7 +26,7 @@ export default {
   props: {
     fileUri: {
       type: String,
-      default: '//api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/jobs'
+      default: '//api.github.com/repos/smiller171/www.millergeek.xyz/contents/app/static/markdown/resume/jobs'
     }
   },
   data() {
@@ -41,7 +41,7 @@ export default {
         headers: { 'Accept': 'application/vnd.github.v3.raw' }
       });
       return response.data.map(file => ({
-        file: file.path
+        file: file.path.replace('app/static', '')
       }));
     }
   },
