@@ -8,6 +8,11 @@ module.exports = {
     '@/plugins/vuetify',
     '@/plugins/vue-async-computed'
   ],
+  render: {
+    static: {
+      maxAge: 604800000
+    }
+  }
   /*
   ** Headers of the page
   */
