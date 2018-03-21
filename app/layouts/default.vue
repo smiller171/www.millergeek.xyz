@@ -61,22 +61,8 @@
 </template>
 
 <script>
-import 'vuetify/dist/vuetify.min.css';
-import AsyncComputed from 'vue-async-computed';
 import SocialIcon from '@/components/SocialIcon';
-import Vue from 'vue';
-import Vuetify from 'vuetify';
 import WordMark from '@/components/WordMark';
-
-Vue.use(Vuetify, {
-  theme: {
-    primary: '#691b99',
-    secondary: '#e1e2e1',
-    accent: '#00b0ff'
-  }
-});
-Vue.use(AsyncComputed);
-
 
 
 export default {

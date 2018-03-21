@@ -1,7 +1,12 @@
 module.exports = {
   srcDir: 'app/',
   css: [
-    'assets/main.css'
+    'assets/main.css',
+    'vuetify/dist/vuetify.min.css'
+  ],
+  plugins: [
+    '@/plugins/vuetify',
+    '@/plugins/vue-async-computed'
   ],
   /*
   ** Headers of the page
