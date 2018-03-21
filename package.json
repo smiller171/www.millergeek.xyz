@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "deploy": "yarn deploy:dev",
+    "deploy": "yarn deploy:dev; yarn deploy:prod",
     "deploy:dev": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "deploy:prod": "sed -i '' 's/gh.millergeek.xyz/millergeek.xyz/g' dist/CNAME; push-dir --dir=dist --branch=master --remote=prod --cleanup",
     "start": "nuxt start",
