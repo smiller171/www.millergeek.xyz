@@ -48,6 +48,11 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
-    }
+    },
+    vendor: [
+      'axios',
+      'vuetify',
+      'vue-async-computed'
+    ]
   }
 };
