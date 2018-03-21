@@ -12,7 +12,7 @@ module.exports = {
     static: {
       maxAge: 604800000
     }
-  }
+  },
   /*
   ** Headers of the page
   */
