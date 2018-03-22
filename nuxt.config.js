@@ -1,17 +1,17 @@
 module.exports = {
   srcDir: 'app/',
   css: [
-    'assets/main.css',
+    'assets/main.scss',
     'vuetify/dist/vuetify.min.css'
   ],
   plugins: [
-    '@/plugins/vuetify',
-    '@/plugins/vue-async-computed'
+    '@/plugins/vuetify'
   ],
-  render: {
-    static: {
-      maxAge: 604800000
-    }
+  modules: [
+    '@nuxtjs/axios'
+  ],
+  axios: {
+    // debug: true
   },
   /*
   ** Headers of the page
@@ -48,11 +48,16 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'vue-markdown-loader',
+        options: {
+          wrapper: 'div'
+        }
+      });
     },
     vendor: [
-      'axios',
-      'vuetify',
-      'vue-async-computed'
+      'vuetify'
     ]
   }
 };
