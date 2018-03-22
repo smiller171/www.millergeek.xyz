@@ -35,7 +35,9 @@
       </v-tabs>
     </v-toolbar>
     <v-app class="nuxtApp">
-      <nuxt id="nuxt"/>
+      <nuxt
+        id="nuxt"
+      />
     </v-app>
     <v-footer
       class="footer"
@@ -115,8 +117,15 @@ export default {
       ]
     };
   },
-  created() {
-
+  mounted() {
+    this.$root.$on('tabChange', this.setTab);
+  },
+  methods: {
+    setTab(v) {
+      console.log('tab is ', v);
+      
+      this.tab = v;
+    }
   }
 };
 </script>

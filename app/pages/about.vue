@@ -13,6 +13,9 @@ export default {
   components: {
     AboutSummary,
     IconCloud
+  },
+  created() {
+    this.$root.$emit('tabChange', '/about');
   }
 };
 </script>
