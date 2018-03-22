@@ -7,9 +7,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "deploy": "yarn deploy:dev; yarn deploy:prod && yarn deploy:keybase",
-    "deploy:dev": "push-dir --dir=dist --branch=gh-pages --cleanup",
-    "deploy:prod": "sed -i '' 's/gh.millergeek.xyz/millergeek.xyz/g' dist/CNAME; push-dir --dir=dist --branch=master --remote=prod --cleanup",
+    "deploy": "yarn deploy:keybase",
     "deploy:keybase": "cp -r dist/ /keybase/public/smiller171/",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -27,10 +25,6 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.3.14",
-    "@storybook/addon-links": "^3.3.14",
-    "@storybook/addons": "^3.3.14",
-    "@storybook/vue": "^3.3.14",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-preset-vue": "^2.0.1",
