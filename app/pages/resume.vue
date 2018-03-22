@@ -7,7 +7,7 @@
     </div>
     <div class="resumeContainer">
       <v-card
-        v-for="(item, index) in files.reverse()"
+        v-for="(item, index) in files.slice().reverse()"
         :key="index"
         class="jobCard"
       >
@@ -52,26 +52,6 @@ export default {
       qualFile: '/markdown/resume/qualifications.md',
       files
     };
-  },
-  methods: {
-    setData(v) {
-      const fileIndex = this.files.findIndex(item => item.file === v.file);
-      this.files[fileIndex].data = v.data;
-      this.files[fileIndex].date = this.getDate(v.data);
-      this.files.sort(function(a, b) {
-        if (a.date > b.date) {
-          return -1;
-        } else if (a.date < b.date) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-    },
-    getDate(data) {
-      const regex = /(\w+ \d{4})/m;
-      return new Date(regex.exec(data)[0]);
-    }
   }
 };
 </script>
