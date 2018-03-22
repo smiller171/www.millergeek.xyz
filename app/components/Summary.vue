@@ -4,29 +4,22 @@
       :height="imgHeight"
       src="/images/Scott-Headshot.jpg"
     />
-    <markdown
-      file="/markdown/about/about.md"
-      class="card-body"
-    />
+    <aboutData class="card-body"/>
   </v-card>
 </template>
 
 <script>
-import Markdown from '@/components/Markdown';
+import aboutData from '@/assets/markdown/about/about.md';
 
 export default {
   components: {
-    Markdown
+    aboutData
   },
   data() {
     return {
-      imgWidth: 0
+      imgWidth: 100,
+      imgHeight: 74
     };
-  },
-  computed: {
-    imgHeight() {
-      return (74 / 100) * this.imgWidth;
-    }
   },
   mounted() {
     this.handleResize();
@@ -37,8 +30,8 @@ export default {
   },
   methods: {
     handleResize() {
-      const cardWidth = this.$refs.summaryCard.$el.clientWidth;
-      this.imgWidth = cardWidth;
+      this.imgWidth = this.$refs.summaryCard.$el.clientWidth;
+      this.imgHeight = (74 / 100) * this.imgWidth;
     }
   }
 };

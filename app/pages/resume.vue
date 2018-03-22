@@ -1,27 +1,44 @@
 <template>
   <main class="main">
     <div class="qualContainer">
-      <mdCard :file="qualFile"/>
+      <v-card>
+        <qualData class="card-body"/>
+      </v-card>
     </div>
     <div class="resumeContainer">
-      <mdCard
-        v-for="(item, index) in files"
+      <v-card
+        v-for="(item, index) in files.slice().reverse()"
         :key="index"
-        :file="item.file"
         class="jobCard"
-        @mdData="setData"
-      />
+      >
+        <component
+          :is="item"
+          class="card-body"
+        />
+      </v-card>
       <div class="filler"/>
     </div>
   </main>
 </template>
 
 <script>
-import axios from 'axios';
-import mdCard from '@/components/MarkdownCard';
+import qualData from '@/assets/markdown/resume/qualifications.md';
+
+const files = (function () {
+  var context = require.context('@/assets/markdown/resume/jobs/', true, /\.md$/);
+  const obj = {};
+  const arr = [];
+  context.keys().forEach(function (key) {
+    obj[key] = context(key);
+    arr.push(context(key).default);
+  });
+  return arr;
+})();
+
+
 export default {
   components: {
-    mdCard
+    qualData
   },
   props: {
     fileUri: {
@@ -32,38 +49,9 @@ export default {
   data() {
     return {
       mdData: null,
-      qualFile: '/markdown/resume/qualifications.md'
+      qualFile: '/markdown/resume/qualifications.md',
+      files
     };
-  },
-  asyncComputed: {
-    async files() {
-      const response = await axios.get(this.fileUri, {
-        headers: { 'Accept': 'application/vnd.github.v3.raw' }
-      });
-      return response.data.map(file => ({
-        file: file.path.replace('app/static', '')
-      }));
-    }
-  },
-  methods: {
-    setData(v) {
-      const fileIndex = this.files.findIndex(item => item.file === v.file);
-      this.files[fileIndex].data = v.data;
-      this.files[fileIndex].date = this.getDate(v.data);
-      this.files.sort(function(a, b) {
-        if (a.date > b.date) {
-          return -1;
-        } else if (a.date < b.date) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-    },
-    getDate(data) {
-      const regex = /(\w+ \d{4})/m;
-      return new Date(regex.exec(data)[0]);
-    }
   }
 };
 </script>

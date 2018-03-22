@@ -13,9 +13,9 @@
     </v-toolbar>
     <v-toolbar
       dark
-      height="unset"
       color="primary darken-2"
       class="tabbar"
+      dense
     >
       <v-tabs
         v-model="tab"
@@ -122,8 +122,6 @@ export default {
   },
   methods: {
     setTab(v) {
-      console.log('tab is ', v);
-      
       this.tab = v;
     }
   }

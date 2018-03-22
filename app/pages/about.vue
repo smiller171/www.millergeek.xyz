@@ -1,6 +1,8 @@
 <template>
   <main class="main">
-    <about-summary class="summary"/>
+    <about-summary
+      class="summary"
+    />
     <icon-cloud class="cloud"/>
   </main>
 </template>
@@ -8,6 +10,7 @@
 <script>
 import AboutSummary from '@/components/Summary';
 import IconCloud from '@/components/IconCloud';
+
 
 export default {
   components: {
