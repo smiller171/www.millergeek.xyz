@@ -4,7 +4,8 @@ module.exports = {
     'assets/main.scss'
   ],
   modules: [
-    '@millergeek/vuetify'
+    '@millergeek/vuetify',
+    '@nuxtjs/pwa'
   ],
   vuetify: {
     theme: {
@@ -24,11 +25,15 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'www.millergeek.xyz',
+    title: 'millergeek.xyz',
+    htmlAttrs: {
+      lang: 'en'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Personal Website' }
+      { hid: 'description', name: 'description', content: 'Personal Website' },
+      { 'theme-color': '#691b99' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

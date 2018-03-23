@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@millergeek/vuetify": "^0.5.0",
+    "@nuxtjs/pwa": "^2.0.8",
     "nuxt": "^1.4.0",
     "webfontloader": "^1.6.28"
   },
