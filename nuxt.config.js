@@ -7,12 +7,6 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify'
   ],
-  modules: [
-    '@nuxtjs/axios'
-  ],
-  axios: {
-    // debug: true
-  },
   /*
   ** Headers of the page
   */
