@@ -20,8 +20,7 @@
     "@nuxtjs/axios": "^5.1.1",
     "nuxt": "^1.4.0",
     "showdown": "^1.8.6",
-    "vuetify": "smiller171/vuetify#dev",
-    "webfontloader": "^1.6.28"
+    "vuetify": "smiller171/vuetify#dev"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
