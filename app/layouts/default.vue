@@ -197,6 +197,10 @@ export default {
   overflow: visible;
 }
 
+.tabs__div {
+  font-size: 16px;
+}
+
 :not(.wf-rubik-n4-active) .tabs__div > a {
   font-family: sans-serif;
 }
