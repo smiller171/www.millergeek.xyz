@@ -9,7 +9,7 @@
   padding: 1.25rem;
   > h1,h2 {
     margin-bottom: .75rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.2;
   }
   > h2 {
@@ -19,4 +19,22 @@
     padding-left: 1.25rem;
   }
 }
-
+:not(.wf-istokweb-n4-active) * {
+  font-family: sans-serif;
+}
+.wf-istokweb-n4-active * {
+  font-family: 'Istok Web';
+}
+html {
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
