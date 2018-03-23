@@ -28,8 +28,8 @@ module.exports = {
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Merienda+One|Rubik|Istok+Web',
-        media: "none",
-        onload: "if(media!='all')media='all'"
+        media: 'none',
+        onload: 'if(media!="all")media="all"'
       }
     ],
   },
