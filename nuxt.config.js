@@ -40,7 +40,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Personal Website' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preload', as: 'font', href: 'https://fonts.googleapis.com/css?family=Merienda+One%7CRubik%7CIstok+Web' }
     ],
   },
   /*
@@ -70,7 +71,6 @@ module.exports = {
           wrapper: 'div'
         }
       });
-    },
-    extractCSS: true
+    }
   }
 };
