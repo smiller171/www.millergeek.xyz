@@ -128,7 +128,8 @@ export default {
           'Istok Web'
         ]
       },
-      async: true
+      async: true,
+      timeout: 5000
     });
     this.$root.$on('tabChange', this.setTab);
   },
