@@ -11,7 +11,9 @@ module.exports = {
       primary: '#691b99',
       secondary: '#e1e2e1',
       accent: '#00b0ff'
-    }
+    },
+    css: true,
+    materialIcons: false
   },
   /*
   ** Headers of the page
@@ -61,8 +63,6 @@ module.exports = {
         }
       });
     },
-    vendor: [
-      'vuetify'
-    ]
+    extractCSS: true
   }
 };
