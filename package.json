@@ -1,5 +1,5 @@
 {
-  "name": "www.millergeek.xyz",
+  "name": "millergeek.xyz",
   "version": "2.0.0",
   "description": "Personal Website",
   "author": "Scott Miller <scott@millergeek.xyz>",
@@ -17,10 +17,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.1.1",
+    "@millergeek/vuetify": "^0.5.0",
+    "@nuxtjs/pwa": "^2.0.8",
     "nuxt": "^1.4.0",
-    "showdown": "^1.8.6",
-    "vuetify": "smiller171/vuetify#dev"
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

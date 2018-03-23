@@ -7,15 +7,22 @@
 <style lang="scss" scoped>
 .name {
   display: inline-block;
-  font-family: 'Rubik', sans-serif;
+  font-family: sans-serif;
   white-space: pre;
   line-height: 1.2;
   vertical-align: middle;
   &:first-letter {
-    font-family: 'Merienda One', cursive;
+    font-family: cursive;
   }
   &::selection {
     color: #fff;
+  }
+}
+
+.wf-meriendaone-n4-active .name {
+  font-family: 'Rubik';
+  &:first-letter {
+    font-family: 'Merienda One'
   }
 }
 </style>

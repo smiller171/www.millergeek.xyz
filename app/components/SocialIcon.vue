@@ -1,9 +1,6 @@
 <template>
   <div class="iconDiv">
-    <a
-      :href="target"
-      target="_blank"
-    >
+    <a :href="target" >
       <img
         :title="title"
         :src="src" 

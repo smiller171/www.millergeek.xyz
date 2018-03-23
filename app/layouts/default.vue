@@ -34,7 +34,10 @@
         </v-tab>
       </v-tabs>
     </v-toolbar>
-    <v-app class="nuxtApp">
+    <v-app
+      id="nuxtApp"
+      class="nuxtApp"
+    >
       <nuxt
         id="nuxt"
       />
@@ -43,7 +46,7 @@
       class="footer"
       dark
       app
-      color="primary darken-2"
+      color="primary"
       height="60px"
     >
       <div class="footer-left">
@@ -67,7 +70,6 @@
 import SocialIcon from '@/components/SocialIcon';
 import WordMark from '@/components/WordMark';
 
-
 export default {
   transition: 'page',
   components: {
@@ -76,6 +78,8 @@ export default {
   },
   data() {
     return {
+      fontsError: null,
+      fontsLoaded: false,
       tab: '/about',
       tabs: [
         {
@@ -118,6 +122,18 @@ export default {
     };
   },
   mounted() {
+    const WebFont = require('webfontloader');
+    WebFont.load({
+      google: {
+        families: [
+          'Merienda One',
+          'Rubik',
+          'Istok Web'
+        ]
+      },
+      async: true,
+      timeout: 5000
+    });
     this.$root.$on('tabChange', this.setTab);
   },
   methods: {
@@ -174,34 +190,25 @@ export default {
 
 
 <style lang="scss">
-$aws-color: #f90;
-$docker-color: #0db7ed;
-
 .header {
   .toolbar__content {
     height: auto !important;
   }
 }
 
-html {
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .myapp {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
   overflow: visible;
+}
+
+.tabs__div {
+  font-size: 16px;
+}
+
+:not(.wf-rubik-n4-active) .tabs__div > a {
+  font-family: sans-serif;
+}
+.wf-rubik-n4-active .tabs__div > a {
+  font-family: Rubik;
 }
 
 .nuxtApp {

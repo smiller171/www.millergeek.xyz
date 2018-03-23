@@ -1,17 +1,39 @@
 module.exports = {
   srcDir: 'app/',
   css: [
-    'assets/main.scss',
-    'vuetify/dist/vuetify.min.css'
+    'assets/main.scss'
   ],
-  plugins: [
-    '@/plugins/vuetify'
+  modules: [
+    '@millergeek/vuetify',
+    '@nuxtjs/pwa'
   ],
+  vuetify: {
+    theme: {
+      primary: '#691b99',
+      secondary: '#e1e2e1',
+      accent: '#00b0ff'
+    },
+    css: true,
+    materialIcons: false
+  },
+  render: {
+    http2: {
+      push: true
+    }
+  },
+  manifest: {
+    theme_color: '#691b99',
+    start_url: '/about/',
+    short_name: 'MillerGeek'
+  },
   /*
   ** Headers of the page
   */
   head: {
-    title: 'www.millergeek.xyz',
+    title: 'millergeek.xyz',
+    htmlAttrs: {
+      lang: 'en'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,12 +41,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Merienda+One|Rubik|Istok+Web',
-        media: 'none',
-        onload: 'if(media!="all")media="all"'
-      }
+      { rel: 'preload', as: 'font', href: 'https://fonts.googleapis.com/css?family=Merienda+One%7CRubik%7CIstok+Web' }
     ],
   },
   /*
@@ -54,9 +71,6 @@ module.exports = {
           wrapper: 'div'
         }
       });
-    },
-    vendor: [
-      'vuetify'
-    ]
+    }
   }
 };
