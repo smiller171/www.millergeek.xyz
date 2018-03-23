@@ -15,6 +15,11 @@ module.exports = {
     css: true,
     materialIcons: false
   },
+  render: {
+    http2: {
+      push: true
+    }
+  },
   /*
   ** Headers of the page
   */
