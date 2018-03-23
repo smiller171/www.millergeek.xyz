@@ -34,10 +34,14 @@
         </v-tab>
       </v-tabs>
     </v-toolbar>
-    <nuxt
-      id="nuxt"
+    <v-app
+      id="nuxtApp"
       class="nuxtApp"
-    />
+    >
+      <nuxt
+        id="nuxt"
+      />
+    </v-app>
     <v-footer
       class="footer"
       dark
