@@ -23,7 +23,8 @@ module.exports = {
   },
   manifest: {
     theme_color: '#691b99',
-    start_url: '/about/'
+    start_url: '/about/',
+    short_name: 'MillerGeek'
   },
   /*
   ** Headers of the page
