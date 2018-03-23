@@ -78,6 +78,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@millergeek/vuetify@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@millergeek/vuetify/-/vuetify-0.5.0.tgz#3779ef6229a603ef24cd00a2b16c07e0e390f367"
+  dependencies:
+    vuetify smiller171/vuetify#dev
+
 "@nuxtjs/axios@^5.1.1":
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/@nuxtjs/axios/-/axios-5.1.1.tgz#2aec0bfc6cee8dc682b05402af25c0c6bc72a70c"
@@ -6849,9 +6855,9 @@ vue@^2.5.13:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
 
-vuetify@smiller171/vuetify#dev:
-  version "1.0.9"
-  resolved "https://codeload.github.com/smiller171/vuetify/tar.gz/ef0a30a7412f55920e2d13b5e1eaf05940e92f5d"
+"vuetify@github:smiller171/vuetify#dev":
+  version "1.0.10"
+  resolved "https://codeload.github.com/smiller171/vuetify/tar.gz/d79f7ece3f6c87b240624949464d2abaec8629c4"
 
 vuex@^3.0.1:
   version "3.0.1"

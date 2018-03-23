@@ -17,10 +17,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@millergeek/vuetify": "^0.5.0",
     "@nuxtjs/axios": "^5.1.1",
     "nuxt": "^1.4.0",
-    "showdown": "^1.8.6",
-    "vuetify": "smiller171/vuetify#dev"
+    "showdown": "^1.8.6"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

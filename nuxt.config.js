@@ -1,12 +1,18 @@
 module.exports = {
   srcDir: 'app/',
   css: [
-    'assets/main.scss',
-    'vuetify/dist/vuetify.min.css'
+    'assets/main.scss'
   ],
-  plugins: [
-    '@/plugins/vuetify'
+  modules: [
+    '@millergeek/vuetify'
   ],
+  vuetify: {
+    theme: {
+      primary: '#691b99',
+      secondary: '#e1e2e1',
+      accent: '#00b0ff'
+    }
+  },
   /*
   ** Headers of the page
   */
