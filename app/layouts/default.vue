@@ -43,7 +43,7 @@
       class="footer"
       dark
       app
-      color="primary darken-2"
+      color="primary"
       height="60px"
     >
       <div class="footer-left">
