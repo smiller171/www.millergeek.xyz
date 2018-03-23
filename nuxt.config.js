@@ -21,6 +21,10 @@ module.exports = {
       push: true
     }
   },
+  manifest: {
+    theme_color: '#691b99',
+    start_url: '/about/'
+  },
   /*
   ** Headers of the page
   */
@@ -32,8 +36,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Personal Website' },
-      { name: 'theme-color', content: '#691b99'}
+      { hid: 'description', name: 'description', content: 'Personal Website' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
