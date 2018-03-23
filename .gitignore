@@ -8,3 +8,5 @@ yarn-error.log
 # Nuxt build
 .nuxt
 dist
+
+.c9
