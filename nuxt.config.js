@@ -4,7 +4,6 @@ module.exports = {
     'assets/main.scss'
   ],
   modules: [
-    '@millergeek/vuetify',
     '@nuxtjs/pwa'
   ],
   vuetify: {
@@ -26,6 +25,9 @@ module.exports = {
     start_url: '/about/',
     short_name: 'MillerGeek'
   },
+  plugins: [
+    '@/plugins/vuetify'  
+  ]
   /*
   ** Headers of the page
   */
