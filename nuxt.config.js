@@ -38,7 +38,8 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preload', as: 'font', href: 'https://fonts.googleapis.com/css?family=Merienda+One%7CRubik%7CIstok+Web' }
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com/', crossorigin: 'crossorigin'},
+      { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css?family=Merienda+One%7CRubik%7CIstok+Web' }
     ],
   },
   /*
