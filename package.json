@@ -21,7 +21,8 @@
     "@nuxtjs/pwa": "^2.0.8",
     "nuxt": "^1.4.0",
     "vuetify": "smiller171/vuetify#dev",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "webpack-node-externals": "^1.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -36,6 +37,8 @@
     "postcss-loader": ">2.1.2||2.1.1",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "vue-markdown-loader": "^2.4.0"
   }
 }

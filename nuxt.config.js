@@ -1,20 +1,15 @@
+const nodeExternals = require('webpack-node-externals');
+// const resolve = (dir) => require('path').join(__dirname, dir);
+
 module.exports = {
   srcDir: 'app/',
   css: [
+    'vuetify/src/stylus/app.styl',
     'assets/main.scss'
   ],
   modules: [
     '@nuxtjs/pwa'
   ],
-  vuetify: {
-    theme: {
-      primary: '#691b99',
-      secondary: '#e1e2e1',
-      accent: '#00b0ff'
-    },
-    css: true,
-    materialIcons: false
-  },
   render: {
     http2: {
       push: true
@@ -27,7 +22,7 @@ module.exports = {
   },
   plugins: [
     '@/plugins/vuetify'  
-  ]
+  ],
   /*
   ** Headers of the page
   */
@@ -57,7 +52,20 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
+    babel: {
+      plugins: [
+        ['transform-imports', {
+          'vuetify': {
+            'transform': 'vuetify/es5/components/${member}',
+            'preventFullImport': true
+          }
+        }]
+      ]
+    },
+    vendor: [
+      '@/plugins/vuetify.js'
+    ],
+    extend (config, { isDev, isClient, isServer }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -65,6 +73,13 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
+      }
+      if (isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/^vuetify/]
+          })
+        ];
       }
       config.module.rules.push({
         test: /\.md$/,
