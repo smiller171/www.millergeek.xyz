@@ -1,21 +1,15 @@
+const nodeExternals = require('webpack-node-externals');
+// const resolve = (dir) => require('path').join(__dirname, dir);
+
 module.exports = {
   srcDir: 'app/',
   css: [
+    'vuetify/src/stylus/app.styl',
     'assets/main.scss'
   ],
   modules: [
-    '@millergeek/vuetify',
     '@nuxtjs/pwa'
   ],
-  vuetify: {
-    theme: {
-      primary: '#691b99',
-      secondary: '#e1e2e1',
-      accent: '#00b0ff'
-    },
-    css: true,
-    materialIcons: false
-  },
   render: {
     http2: {
       push: true
@@ -26,6 +20,9 @@ module.exports = {
     start_url: '/about/',
     short_name: 'MillerGeek'
   },
+  plugins: [
+    '@/plugins/vuetify'  
+  ],
   /*
   ** Headers of the page
   */
@@ -41,7 +38,8 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preload', as: 'font', href: 'https://fonts.googleapis.com/css?family=Merienda+One%7CRubik%7CIstok+Web' }
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com/', crossorigin: 'crossorigin'},
+      { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css?family=Merienda+One%7CRubik%7CIstok+Web' }
     ],
   },
   /*
@@ -55,7 +53,20 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
+    babel: {
+      plugins: [
+        ['transform-imports', {
+          'vuetify': {
+            'transform': 'vuetify/es5/components/${member}',
+            'preventFullImport': true
+          }
+        }]
+      ]
+    },
+    vendor: [
+      '@/plugins/vuetify.js'
+    ],
+    extend (config, { isDev, isClient, isServer }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -63,6 +74,13 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
+      }
+      if (isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/^vuetify/]
+          })
+        ];
       }
       config.module.rules.push({
         test: /\.md$/,
