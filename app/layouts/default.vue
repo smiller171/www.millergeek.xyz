@@ -91,6 +91,11 @@ export default {
           key: 'resume',
           label: 'Resume',
           target: '/resume/'
+        },
+        {
+          key: 'contact',
+          label: 'Contact',
+          target: '/contact/'
         }
       ],
       socialIcons: [
