@@ -1,9 +1,12 @@
 import {
   transitions,
   VApp,
+  VBtn,
   VCard,
   VFooter,
+  VForm,
   VTabs,
+  VTextField,
   VToolbar,
   VTooltip,
   Vuetify
@@ -17,9 +20,12 @@ Vue.use(Vuetify, {
   components: {
     transitions,
     VApp,
+    VBtn,
     VCard,
     VFooter,
+    VForm,
     VTabs,
+    VTextField,
     VToolbar,
     VTooltip,
     Vuetify
