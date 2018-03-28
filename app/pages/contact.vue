@@ -21,10 +21,10 @@
             label="Subject"
           />
           <v-text-field
-            id="contact-comments"
-            v-model="form.comments"
-            name="comments"
-            label="Comments"
+            id="contact-message"
+            v-model="form.message"
+            name="message"
+            label="Message"
             multi-line
             auto-grow
           />
@@ -47,7 +47,7 @@ export default {
       form: {
         email: '',
         subject: '',
-        comments: ''
+        message: ''
       }
     };
   },
