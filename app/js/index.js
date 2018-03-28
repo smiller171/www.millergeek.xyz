@@ -59,7 +59,7 @@ window.about = new Vue({
   }
 });
 
-axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/about/about.md", {
+axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/about/about.md?ref=archive", {
   headers: {"Accept": "application/vnd.github.v3.raw"}
 })
   .then(function (response) {
@@ -70,7 +70,7 @@ axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/m
     console.error(error);
   });
 
-axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/qualifications.md", {
+axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/qualifications.md?ref=archive", {
   headers: {"Accept": "application/vnd.github.v3.raw"}
 })
   .then(function (response) {
@@ -81,12 +81,12 @@ axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/m
     console.error(error);
   });
 
-axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/jobs", {
+axios.get("https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/markdown/resume/jobs?ref=archive", {
   headers: {"Accept": "application/vnd.github.v3.raw"}
 })
   .then(function (response) {
     response.data.forEach(function(file) {
-      axios.get(`https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/${file.path}`, {
+      axios.get(`https://api.github.com/repos/smiller171/www.millergeek.xyz/contents/${file.path}?ref=archive`, {
         headers: {"Accept": "application/vnd.github.v3.raw"}
       })
         .then(function (response) {
