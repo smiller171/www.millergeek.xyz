@@ -29,7 +29,7 @@
             color="success"
             type="submit"
           >
-            Send
+            <span>Send</span>
           </v-btn>
         </v-form>
       </v-card>
