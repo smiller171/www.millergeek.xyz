@@ -5,7 +5,6 @@
         <v-form
           name="contact"
           method="POST"
-          netlify
           @submit.prevent="handleSubmit"
         >
           <h2>Contact Me</h2>
