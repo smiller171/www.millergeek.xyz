@@ -4,6 +4,7 @@
       <v-card class="contactCard">
         <v-form
           name="contact"
+          method="POST"
           netlify
         >
           <h2>Contact Me</h2>
