@@ -3,8 +3,8 @@
     <div class="contactContainer">
       <v-card class="contactCard">
         <v-form
+          name="contact"
           netlify
-          @submit.prevent="handleSubmit"
         >
           <h2>Contact Me</h2>
           <v-text-field
@@ -35,18 +35,6 @@
     </div>
   </main>
 </template>
-
-<script>
-export default {
-  methods: {
-    handleSubmit() {
-      // sendContactForm();
-      return false;
-    }
-  }
-};
-</script>
-
 
 <style lang="scss" scoped>
 .contactContainer {
