@@ -18,7 +18,7 @@ export default {
     IconCloud
   },
   created() {
-    this.$root.$emit('tabChange', '/about');
+    this.$root.$emit('tabChange', '/about/');
   }
 };
 </script>

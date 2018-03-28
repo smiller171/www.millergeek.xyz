@@ -27,7 +27,7 @@
           v-for="(item, index) in tabs"
           :key="item.key"
           :to="item.target"
-          :class="{ 'active': index === 0 && tab === '/about'}"
+          :class="{ 'active': index === 0 && tab === '/about/'}"
           nuxt
         >
           {{ item.label }}
@@ -80,17 +80,22 @@ export default {
     return {
       fontsError: null,
       fontsLoaded: false,
-      tab: '/about',
+      tab: '/about/',
       tabs: [
         {
           key: 'about',
           label: 'About',
-          target: '/about'
+          target: '/about/'
         },
         {
           key: 'resume',
           label: 'Resume',
-          target: '/resume'
+          target: '/resume/'
+        },
+        {
+          key: 'contact',
+          label: 'Contact',
+          target: '/contact/'
         }
       ],
       socialIcons: [
