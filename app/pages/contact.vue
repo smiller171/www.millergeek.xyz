@@ -13,6 +13,7 @@
             v-model="form.email"
             name="email"
             label="Email Address"
+            required
           />
           <v-text-field
             id="contact-subject"
@@ -27,6 +28,7 @@
             label="Message"
             multi-line
             auto-grow
+            required
           />
           <v-btn
             color="success"
