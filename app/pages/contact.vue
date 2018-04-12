@@ -16,6 +16,7 @@
             name="email"
             label="Email Address"
             required
+            validate-on-blur
           />
           <v-text-field
             id="contact-subject"
