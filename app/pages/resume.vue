@@ -85,8 +85,12 @@ export default {
   flex-grow: 1;
 }
 .filler {
-  flex-grow: 100;
-  min-width: 450px;
+  flex-grow: 2;
+  min-width: 460px;
+  max-width: 1550px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  flex-basis: 900px;
   height: 0px;
 }
 </style>
