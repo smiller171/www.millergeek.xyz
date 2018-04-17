@@ -18,6 +18,9 @@
   > ul {
     padding-left: 1.25rem;
   }
+  :last-child {
+    margin-bottom: 0;
+  }
 }
 :not(.wf-istokweb-n4-active) * {
   font-family: sans-serif;
