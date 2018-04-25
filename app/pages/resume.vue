@@ -17,6 +17,8 @@
         />
       </v-card>
       <div class="filler"/>
+      <div class="filler"/>
+      <div class="filler"/>
     </div>
   </main>
 </template>
@@ -80,13 +82,17 @@ export default {
   margin-top: 1rem;
   max-width: 775px;
   min-width: 230px;
-  flex-basis: 450px;
+  flex-basis: 500px;
   flex-shrink: 1;
   flex-grow: 1;
 }
 .filler {
-  flex-grow: 100;
-  min-width: 450px;
+  flex-grow: 1;
+  min-width: 230px;
+  max-width: 775px;
+  margin-right: 1rem;
+  // margin-left: 1rem;
+  flex-basis: 500px;
   height: 0px;
 }
 </style>
