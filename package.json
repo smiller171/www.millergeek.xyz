@@ -15,10 +15,6 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "engines": {
-    "node": ">= 10.0.0",
-    "npm": ">= 6.0.0"
-  },
   "dependencies": {
     "@millergeek/vuetify": "^0.5.0",
     "@nuxtjs/pwa": "^2.0.8",
