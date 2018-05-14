@@ -21,7 +21,7 @@ module.exports = {
     short_name: 'MillerGeek'
   },
   plugins: [
-    '@/plugins/vuetify'  
+    '@/plugins/vuetify'
   ],
   /*
   ** Headers of the page
@@ -54,6 +54,13 @@ module.exports = {
     ** Run ESLint on save
     */
     babel: {
+      presets: [
+        ['vue-app', {
+          targets: {
+            chrome: 41
+          }
+        }]
+      ],
       plugins: [
         ['transform-imports', {
           'vuetify': {
@@ -63,9 +70,9 @@ module.exports = {
         }]
       ]
     },
-    vendor: [
-      '@/plugins/vuetify.js'
-    ],
+    // vendor: [
+    //   '@/plugins/vuetify.js'
+    // ],
     extend (config, { isDev, isClient, isServer }) {
       if (isDev && isClient) {
         config.module.rules.push({
