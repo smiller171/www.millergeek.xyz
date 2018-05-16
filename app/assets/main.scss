@@ -5,6 +5,9 @@
   opacity: 0;
   transform-origin: 50% 50%;
 }
+.card {
+  page-break-inside: avoid;
+}
 .card-body {
   padding: 1.25rem;
   > h1,h2 {
@@ -46,4 +49,21 @@ html {
 }
 .application.theme--light {
   background-color: #e1e2e1;
+}
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .resumeContainer, .application--wrap {
+    display: block !important;
+  }
+  .toolbar__content {
+    display: block !important;
+  }
+  .jobtitle {
+    display: block !important;
+  }
+  .header {
+    line-height: 1.2 !important;
+  }
 }
