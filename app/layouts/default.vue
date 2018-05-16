@@ -10,11 +10,12 @@
       <h1 class="header-title">
         <word-mark/>
       </h1>
+      <h2 class="jobtitle">DevOps Engineer</h2>
     </v-toolbar>
     <v-toolbar
       dark
       color="primary darken-2"
-      class="tabbar"
+      class="tabbar no-print"
       dense
     >
       <v-tabs
@@ -43,7 +44,7 @@
       />
     </v-app>
     <v-footer
-      class="footer"
+      class="footer no-print"
       dark
       app
       color="primary"
@@ -163,6 +164,7 @@ export default {
   width: 100%;
   text-align: center;
   font-weight: 400;
+  margin-left: 0 !important;
 }
 
 @media all and (min-width: 465px) {
@@ -231,4 +233,17 @@ export default {
   z-index: 1;
 }
 
+.jobtitle {
+  display: none;
+  text-align: center;
+  color: #000;
+  padding-bottom: .5rem;
+  margin-top: -.5rem;
+  margin-right: 0 !important;
+  font-size: 4vw;
+}
+
+.wf-rubik-n4-active .jobtitle {
+  font-family: 'Rubik';
+}
 </style>

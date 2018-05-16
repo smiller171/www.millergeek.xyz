@@ -25,4 +25,10 @@
     font-family: 'Merienda One'
   }
 }
+
+@media print {
+  .name {
+    color: #000 !important;
+  }
+}
 </style>
