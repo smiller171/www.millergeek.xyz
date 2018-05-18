@@ -4,7 +4,7 @@
       <v-card class="contactCard">
         <v-form
           v-model="valid"
-          name="contact"
+          name="contactForm"
           method="POST"
           @submit.prevent="handleSubmit"
         >
