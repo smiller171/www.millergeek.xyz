@@ -7,6 +7,7 @@
           name="contactForm"
           method="POST"
           @submit.prevent="handleSubmit"
+          netlify
         >
           <h2>Contact Me</h2>
           <v-text-field
