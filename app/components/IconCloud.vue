@@ -9,6 +9,7 @@
         :title="icon.title"
         :alt="icon.title"
         :height="iconHeight"
+        :width="icon.width"
       />
     </div>
   </v-card>
@@ -112,8 +113,9 @@ export default {
         },
         {
           key: 'golang',
-          src: '/images/iconcloud/gopher.svg',
-          title: 'GoLang'
+          src: '/images/iconcloud/Go_Logo_Aqua.svg',
+          title: 'GoLang',
+          width: 48
         }
       ],
       title: 'Favorite Tools'

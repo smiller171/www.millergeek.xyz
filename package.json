@@ -37,7 +37,7 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.3.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.11.0",
     "postcss-loader": ">2.1.2||2.1.1",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.2",

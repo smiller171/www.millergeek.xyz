@@ -10,7 +10,8 @@
         :src="src" 
         :alt="alt"
         :title="title"
-        :height="height"
+        :height="width ? null : height"
+        :width="width"
       >
       <span>{{ title }}</span>
     </v-tooltip>
@@ -26,6 +27,10 @@ export default {
     },
     height: {
       default: 48,
+      type: Number
+    },
+    width: {
+      default: null,
       type: Number
     },
     src: {
