@@ -101,12 +101,6 @@ export default {
       ],
       socialIcons: [
         {
-          key: 'googlePlus',
-          title: 'Google+',
-          img: '/images/social/google-plus.svg',
-          target: 'https://plus.google.com/+ScottMiller171'
-        },
-        {
           key: 'twitter',
           title: 'Twitter',
           img: '/images/social/twitter.svg',
