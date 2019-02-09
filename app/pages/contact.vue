@@ -5,10 +5,15 @@
         <v-form
           v-model="valid"
           name="contactForm"
-          method="POST"
+          action=""
+          method="post"
           netlify
           @submit.prevent="handleSubmit"
         >
+          <input 
+            type="hidden" 
+            name="form-name" 
+            value="contactForm" >
           <h2>Contact Me</h2>
           <v-text-field
             id="contact-email"
