@@ -9,6 +9,7 @@
           method="post"
           data-netlify="true"
           netlify
+          @submit.prevent="handleSubmit"
         >
           <input 
             type="hidden" 
