@@ -8,6 +8,7 @@
           action=""
           method="post"
           data-netlify="true"
+          netlify-honeypot="bot-field"
           netlify
         >
           <input 
