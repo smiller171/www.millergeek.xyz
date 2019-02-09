@@ -44,7 +44,6 @@
             auto-grow
             required
           />
-          <div data-netlify-recaptcha="true"/>
           <v-btn
             :disabled="!valid"
             color="success"
