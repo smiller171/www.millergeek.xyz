@@ -7,6 +7,7 @@
           name="contactForm"
           action=""
           method="post"
+          data-netlify="true"
           netlify
           @submit.prevent="handleSubmit"
         >
