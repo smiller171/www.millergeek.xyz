@@ -52,39 +52,9 @@ export default {
           title: 'Lambda'
         },
         {
-          key: 'ec2',
-          src: '/images/iconcloud/aws-ec2.svg',
-          title: 'EC2'
-        },
-        {
-          key: 'route53',
-          src: '/images/iconcloud/aws-route53.svg',
-          title: 'Route 53'
-        },
-        {
           key: 'apiGateway',
           src: '/images/iconcloud/aws-api-gateway.svg',
           title: 'API Gateway'
-        },
-        {
-          key: 's3',
-          src: '/images/iconcloud/aws-s3.svg',
-          title: 'S3'
-        },
-        {
-          key: 'cloudfront',
-          src: '/images/iconcloud/aws-cloudfront.svg',
-          title: 'CloudFront'
-        },
-        {
-          key: 'rds',
-          src: '/images/iconcloud/aws-rds.svg',
-          title: 'RDS'
-        },
-        {
-          key: 'dynamodb',
-          src: '/images/iconcloud/aws-dynamodb.svg',
-          title: 'DynamoDB'
         },
         {
           key: 'firebase',
@@ -102,11 +72,6 @@ export default {
           title: 'CircleCI'
         },
         {
-          key: 'bootstrap',
-          src: '/images/iconcloud/bootstrap.svg',
-          title: 'Bootstrap'
-        },
-        {
           key: 'nodejs',
           src: '/images/iconcloud/nodejs-icon.svg',
           title: 'Node.js'
@@ -116,6 +81,11 @@ export default {
           src: '/images/iconcloud/Go_Logo_Aqua.svg',
           title: 'GoLang',
           width: 48
+        },
+        {
+          key: 'kubernetes',
+          src: '/images/iconcloud/kubernetes.svg',
+          title: 'Kubernetes'
         }
       ],
       title: 'Favorite Tools'
