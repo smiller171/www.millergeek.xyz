@@ -4,11 +4,21 @@
       <v-card class="contactCard">
         <v-form
           v-model="valid"
-          name="contact"
-          method="POST"
-          @submit.prevent="handleSubmit"
+          name="contactForm"
+          action=""
+          method="post"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          netlify
         >
+          <input 
+            type="hidden" 
+            name="form-name" 
+            value="contactForm" >
           <h2>Contact Me</h2>
+          <p class="hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field" ></label>
+          </p>
           <v-text-field
             id="contact-email"
             v-model="form.email"
@@ -79,7 +89,7 @@ export default {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: this.encode({ 'form-name': 'contact', ...this.form }),
+        body: this.encode({ 'form-name': 'contactForm', ...this.form }),
       })
         .then(() => alert('Success!'))
         .catch(error => alert(error));
@@ -99,5 +109,8 @@ export default {
   max-width: 775px;
   padding: 1rem;
   flex-grow: 1;
+}
+.hidden {
+  display: none;
 }
 </style>

@@ -24,7 +24,7 @@
     "@nuxtjs/pwa": "^2.0.8",
     "nuxt": "^1.4.0",
     "punycode": "^2.1.0",
-    "vuetify": "smiller171/vuetify#dev",
+    "vuetify": "github:smiller171/vuetify#master",
     "webfontloader": "^1.6.28",
     "webpack-node-externals": "^1.6.0"
   },
