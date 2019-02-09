@@ -15,6 +15,9 @@
             name="form-name" 
             value="contactForm" >
           <h2>Contact Me</h2>
+          <p class="hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field" ></label>
+          </p>
           <v-text-field
             id="contact-email"
             v-model="form.email"
@@ -40,6 +43,7 @@
             auto-grow
             required
           />
+          <div data-netlify-recaptcha="true"/>
           <v-btn
             :disabled="!valid"
             color="success"
@@ -105,5 +109,8 @@ export default {
   max-width: 775px;
   padding: 1rem;
   flex-grow: 1;
+}
+.hidden {
+  display: none;
 }
 </style>
