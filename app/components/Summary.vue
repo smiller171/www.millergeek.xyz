@@ -1,19 +1,22 @@
 <template>
   <v-card ref="summaryCard">
-    <v-card-media
+    <v-img
       :height="imgHeight"
       src="/images/Scott-Headshot.jpg"
     />
-    <aboutData class="card-body"/>
+    <aboutData class="card-body" />
   </v-card>
 </template>
 
 <script>
+import { VCard, VImg } from 'vuetify/lib';
 import aboutData from '@/assets/markdown/about/about.md';
 
 export default {
   components: {
-    aboutData
+    aboutData,
+    VCard,
+    VImg
   },
   data() {
     return {

@@ -14,10 +14,11 @@
           <input 
             type="hidden" 
             name="form-name" 
-            value="contactForm" >
+            value="contactForm"
+          >
           <h2>Contact Me</h2>
           <p class="hidden">
-            <label>Don’t fill this out if you're human: <input name="bot-field" ></label>
+            <label>Don’t fill this out if you're human: <input name="bot-field"></label>
           </p>
           <v-text-field
             id="contact-email"

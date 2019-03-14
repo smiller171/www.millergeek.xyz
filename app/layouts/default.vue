@@ -6,35 +6,44 @@
       dark
       color="primary darken-2"
       class="header"
+      tabs
+      app
     >
-      <h1 class="header-title">
-        <word-mark/>
-      </h1>
-      <h2 class="jobtitle">DevOps Engineer</h2>
+      <v-toolbar-title
+        class="header-title"
+      >
+        <word-mark />
+      </v-toolbar-title>
+      <h2 class="jobtitle">
+        DevOps Engineer
+      </h2>
+      <template v-slot:extension>
+        <v-tabs
+          v-model="tab"
+          color="primary"
+          grow
+        >
+          <v-tabs-slider color="accent" />
+          <v-tab
+            v-for="(item, index) in tabs"
+            :key="item.key"
+            :to="item.target"
+            :class="{ 'active': index === 0 && tab === '/about/'}"
+            nuxt
+          >
+            {{ item.label }}
+          </v-tab>
+        </v-tabs>
+      </template>
     </v-toolbar>
-    <v-toolbar
+    <!-- <v-toolbar
       dark
       color="primary darken-2"
       class="tabbar no-print"
       dense
     >
-      <v-tabs
-        v-model="tab"
-        color="primary"
-        grow
-      >
-        <v-tabs-slider color="accent"/>
-        <v-tab
-          v-for="(item, index) in tabs"
-          :key="item.key"
-          :to="item.target"
-          :class="{ 'active': index === 0 && tab === '/about/'}"
-          nuxt
-        >
-          {{ item.label }}
-        </v-tab>
-      </v-tabs>
-    </v-toolbar>
+      
+    </v-toolbar> -->
     <v-app
       id="nuxtApp"
       class="nuxtApp"
@@ -51,7 +60,7 @@
       height="60px"
     >
       <div class="footer-left">
-        <word-mark/>
+        <word-mark />
       </div>
       <div class="footer-right">
         <social-icon
@@ -68,12 +77,20 @@
 </template>
 
 <script>
+import { VApp, VFooter, VTab, VTabs, VTabsSlider, VToolbar, VToolbarTitle } from 'vuetify/lib';
 import SocialIcon from '@/components/SocialIcon';
 import WordMark from '@/components/WordMark';
 
 export default {
   transition: 'page',
   components: {
+    VApp,
+    VFooter,
+    VTabs,
+    VTabsSlider,
+    VTab,
+    VToolbar,
+    VToolbarTitle,
     SocialIcon,
     WordMark
   },

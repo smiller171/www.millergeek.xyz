@@ -1,6 +1,6 @@
 <template>
   <div class="iconDiv">
-    <a :href="target" >
+    <a :href="target">
       <img
         :title="title"
         :src="src" 

@@ -8,8 +8,22 @@ module.exports = {
     'assets/main.scss'
   ],
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    [
+      '@nuxtjs/vuetify',
+      {
+        materialIcons: false,
+        treeShake: true
+      }
+    ]
   ],
+  vuetify: {
+    theme: {
+      primary: '#691b99',
+      secondary: '#e1e2e1',
+      accent: '#00b0ff'
+    }
+  },
   render: {
     http2: {
       push: true
@@ -21,7 +35,7 @@ module.exports = {
     short_name: 'MillerGeek'
   },
   plugins: [
-    '@/plugins/vuetify'
+    // '~/plugins/vuetify'
   ],
   /*
   ** Headers of the page
@@ -54,20 +68,13 @@ module.exports = {
     ** Run ESLint on save
     */
     babel: {
-      presets: [
-        ['vue-app', {
-          targets: {
-            chrome: 41
-          }
-        }]
-      ],
       plugins: [
-        ['transform-imports', {
-          'vuetify': {
-            'transform': 'vuetify/es5/components/${member}',
-            'preventFullImport': true
-          }
-        }]
+        // ['transform-imports', {
+        //   'vuetify': {
+        //     'transform': 'vuetify/es5/components/${member}',
+        //     'preventFullImport': true
+        //   }
+        // }]
       ]
     },
     // vendor: [
@@ -85,16 +92,23 @@ module.exports = {
       if (isServer) {
         config.externals = [
           nodeExternals({
-            whitelist: [/^vuetify/]
+            // whitelist: [/^vuetify/]
           })
         ];
       }
       config.module.rules.push({
         test: /\.md$/,
-        loader: 'vue-markdown-loader',
-        options: {
-          wrapper: 'div'
-        }
+        use: [
+          {
+            loader: 'vue-loader'
+          },
+          {
+            loader: 'vue-markdown-loader/lib/markdown-compiler',
+            options: {
+              raw: true
+            }
+          }
+        ]
       });
     }
   }

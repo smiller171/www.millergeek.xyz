@@ -1,24 +1,23 @@
-import {
-  transitions,
+import Vuetify, {
   VApp,
   VBtn,
   VCard,
+  VFadeTransition,
   VFooter,
   VForm,
   VTabs,
   VTextField,
   VToolbar,
-  VTooltip,
-  Vuetify
-} from 'vuetify';
-import { Ripple } from 'vuetify/es5/directives';
+  VTooltip
+} from 'vuetify/lib';
+import { Ripple } from 'vuetify/lib/directives';
 import Vue from 'vue';
 
 // require('vuetify/src/stylus/app.styl');
 
 Vue.use(Vuetify, {
   components: {
-    transitions,
+    VFadeTransition,
     VApp,
     VBtn,
     VCard,

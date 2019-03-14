@@ -2,7 +2,7 @@
   <main class="main">
     <div class="qualContainer">
       <v-card>
-        <qualData class="card-body"/>
+        <qualData class="card-body" />
       </v-card>
     </div>
     <div class="resumeContainer">
@@ -16,9 +16,9 @@
           class="card-body"
         />
       </v-card>
-      <div class="filler"/>
-      <div class="filler"/>
-      <div class="filler"/>
+      <div class="filler" />
+      <div class="filler" />
+      <div class="filler" />
     </div>
   </main>
 </template>

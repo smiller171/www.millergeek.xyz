@@ -19,7 +19,12 @@
 </template>
 
 <script>
+import { VTooltip } from 'vuetify/lib';
+
 export default {
+  components: {
+    VTooltip
+  },
   props: {
     alt: {
       default: '',

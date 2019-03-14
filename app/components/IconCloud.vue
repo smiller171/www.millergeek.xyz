@@ -1,6 +1,8 @@
 <template>
   <v-card class="iconCloudCard card-body">
-    <h2 class="card-title h2">{{ title }}</h2>
+    <h2 class="card-title h2">
+      {{ title }}
+    </h2>
     <div class="iconGrid">
       <cloud-icon
         v-for="icon in icons"
@@ -17,10 +19,12 @@
 
 <script>
 import CloudIcon from '@/components/CloudIcon';
+import { VCard } from 'vuetify/lib';
 
 export default {
   components: {
-    CloudIcon
+    CloudIcon,
+    VCard
   },
   data() {
     return {

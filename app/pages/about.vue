@@ -3,7 +3,7 @@
     <about-summary
       class="summary"
     />
-    <icon-cloud class="cloud"/>
+    <icon-cloud class="cloud" />
   </main>
 </template>
 
