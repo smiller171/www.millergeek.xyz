@@ -3,6 +3,4 @@
 * Managed Docker Swarm and Kubernetes
 * Build automation with Packer
 * Frontend Development with Vue
-* Documented Vue components with Storybook
-* Managed K8s pods with Python
 * Automated deployments with Ansible

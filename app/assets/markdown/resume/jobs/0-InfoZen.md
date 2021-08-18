@@ -1,7 +1,6 @@
 ## InfoZen
 ### April 2013 - August 2014
-* Worked extensively with AWS
+* Worked extensively with AWS on NASA WestPrime contract
 * Managed Linux and Windows cloud servers with Ansible and shell scripts
 * Automated deployments using Ansible
-* Performed basic Oracle and MySQL database administration
-* Set up Atlassian Stash for locally hosted Git solution
+* Set up and managed locally hosted git solution

@@ -240,4 +240,10 @@ export default {
 .wf-rubik-n4-active .jobtitle {
   font-family: 'Rubik';
 }
+
+@media print {
+  .nuxtApp {
+    margin: 0 !important;
+  }
+}
 </style>
