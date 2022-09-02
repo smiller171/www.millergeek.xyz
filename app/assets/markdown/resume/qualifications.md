@@ -1,7 +1,5 @@
 ## Qualifications
-* 7 years DevOps experience
-* Expert in AWS infrastructure, experience with most other clouds
-* Expert in modern DevOps tools including Docker and Terraform
-* Experience with container orchestration, including Kumbernetes and ECS
-* Expert with configuration management tools, especially Ansible
+* \>10 years AWS experience, with 8 years in DevOps
+* Expert in modern DevOps tools including Kubernetes and Terraform
+* Comfortable in JavaScript, TypeScript, and Python
 * Experience doing frontend development with Vue
