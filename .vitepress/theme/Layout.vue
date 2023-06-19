@@ -1,0 +1,121 @@
+<script setup lang="ts">
+import { useData, useRoute } from 'vitepress'
+import Resume from './Resume.vue'
+import Card from './Card.vue'
+
+// https://vitepress.dev/reference/runtime-api#usedata
+const { site, frontmatter } = useData()
+</script>
+
+<template>
+  <header class="titlebar primary on-primary-text" id="titlebar">
+    <h1>{{ site.title }}</h1>
+  </header>
+  <div class="topnav surface">
+    <nav class="elevation-3 primary" id="topnav">
+      <ul>
+        <li class="nav-item"><a class="on-primary-text" href="/about">About</a></li>
+        <li class="nav-item"><a class="on-primary-text" href="/resume">Resume</a></li>
+        <li class="nav-item"><a class="on-primary-text" href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main surface on-surface-text">
+    <Resume v-if="frontmatter.layout === 'resume'" />
+    <Card v-else >
+      <Content />
+    </Card>
+  </div>
+  <footer class="primary on-primary-text elevation-3">
+    <div class="footer-left">
+      <span>Scott </span>
+      <span>Miller</span>
+    </div>
+    <div class="footer-right">
+      <ul>
+        <li><a class="on-primary-text" href="https://www.linkedin.com/in/scott-miller-91713652/">LinkedIn</a></li>
+        <li><a class="on-primary-text" href="https://github.com/smiller171">GitHub</a></li>
+        <li><a class="on-primary-text" href="https://keybase.io/smiller171">KeyBase</a></li>
+      </ul>
+    </div>
+  </footer>
+</template>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  font-weight: bold;
+
+  > h1 {
+    margin: 0;
+    font-size: 5rem;
+  }
+}
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding-bottom: 1em;
+  overflow: hidden;
+}
+
+nav {
+  > ul {
+    padding: 1em 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+
+    > li {
+        display: inline;
+        margin-right: 1em;
+      }
+  }
+}
+
+.main {
+  padding: 0 1em 1em;
+  min-height: calc(100vh - (8rem + 6em));
+}
+
+h2 {
+  /* margin-block-start: 0; */
+}
+
+footer {
+  padding: 1em;
+  margin: 0;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+
+  .footer-right {
+    > ul {
+      margin: 0;
+      padding: 0;
+
+      > li {
+        display: inline;
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+
+
+
+</style>
