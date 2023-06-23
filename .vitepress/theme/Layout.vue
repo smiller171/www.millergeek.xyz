@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { useData, useRoute } from 'vitepress'
-import Resume from './Resume.vue'
+import { useData } from 'vitepress'
+import About from './About.vue'
 import Card from './Card.vue'
+import Resume from './Resume.vue'
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { site, frontmatter } = useData()
@@ -14,7 +15,7 @@ const { site, frontmatter } = useData()
   <div class="topnav surface">
     <nav class="elevation-3 primary" id="topnav">
       <ul>
-        <li class="nav-item"><a class="on-primary-text" href="/about">About</a></li>
+        <li class="nav-item"><a class="on-primary-text" href="/">About</a></li>
         <li class="nav-item"><a class="on-primary-text" href="/resume">Resume</a></li>
         <li class="nav-item"><a class="on-primary-text" href="/contact">Contact</a></li>
       </ul>
@@ -22,6 +23,7 @@ const { site, frontmatter } = useData()
   </div>
   <div class="main surface on-surface-text">
     <Resume v-if="frontmatter.layout === 'resume'" />
+    <About v-else-if="frontmatter.layout === 'about'" />
     <Card v-else >
       <Content />
     </Card>
@@ -114,8 +116,4 @@ footer {
     }
   }
 }
-
-
-
-
 </style>

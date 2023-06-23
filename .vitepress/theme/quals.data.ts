@@ -1,13 +1,8 @@
 import { createContentLoader } from 'vitepress'
 
-// export default createContentLoader('app/resume/qualifications.md', {
-//   render: true,
-// })
+declare const data
+export { data }
 
-export default {
-  async load() {
-    return (await createContentLoader('app/resume/qualifications.md', {
-      render: true
-    }).load())
-  }
-}
+export default createContentLoader('app/resume/qualifications.md', {
+  render: true,
+})

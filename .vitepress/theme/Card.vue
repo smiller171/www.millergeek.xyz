@@ -15,5 +15,10 @@ const { site, frontmatter } = useData()
   .card {
     padding: 1em;
     border-radius: 1em;
+
+    :first-child {
+      margin-top: 0;
+    }
   }
 </style>
+
