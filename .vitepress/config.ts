@@ -7,5 +7,6 @@ export default defineConfig({
   description: "Personal Website",
   srcDir: "app",
   cleanUrls: true,
-  lastUpdated: true
+  lastUpdated: true,
+  mpa: true
 })
