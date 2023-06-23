@@ -1,5 +1,5 @@
 [build]
-publish = "dist/"
+publish = ".vitepress/dist/"
 command = "npm run build"
 
 [context.production.environment]
@@ -15,4 +15,3 @@ NODE_ENV = "development"
 
 [context.dev.environment]
 NODE_ENV = "development"
-
