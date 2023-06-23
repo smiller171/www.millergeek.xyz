@@ -13,3 +13,6 @@ dist
 sw.*
 .vitepress/dist
 .vitepress/cache
+
+# Local Netlify folder
+.netlify

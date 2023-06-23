@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import About from './About.vue'
-import Card from './Card.vue'
 import Resume from './Resume.vue'
 
 // https://vitepress.dev/reference/runtime-api#usedata

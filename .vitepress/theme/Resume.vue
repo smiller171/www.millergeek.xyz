@@ -1,22 +1,12 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import { data as jobs } from './jobs.data.js'
-import { data as quals } from './quals.data.js'
-import Card from './Card.vue';
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { site, frontmatter } = useData()
 </script>
 
 <template>
-  <div class="jobs-list qual-container">
-    <Card class="job" v-html=quals[0].html />
-  </div>
-  <hr class="">
-  <div class="jobs-list">
-    <Card class="job" v-for="job in jobs" v-html=job.html />
-    <Card class="filler job" />
-  </div>
+  <content />
 </template>
 
 <style>

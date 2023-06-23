@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import { data as tools } from './tools.data'
-import Card from './Card.vue'
 import CloudIcon from './CloudIcon.vue'
 
 // https://vitepress.dev/reference/runtime-api#usedata
