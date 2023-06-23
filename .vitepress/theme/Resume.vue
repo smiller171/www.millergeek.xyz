@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import { data as jobs } from './jobs.data'
-import { data as quals } from './quals.data'
+import { data as jobs } from './jobs.data.js'
+import { data as quals } from './quals.data.js'
 import Card from './Card.vue';
 
 // https://vitepress.dev/reference/runtime-api#usedata
