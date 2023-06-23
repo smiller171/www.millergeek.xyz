@@ -1,0 +1,17 @@
+[build]
+publish = ".vitepress/dist/"
+command = "npm run build"
+
+[context.production.environment]
+NODE_ENV = "production"
+
+[context.branch-deploy.environment]
+NODE_ENV = "development"
+
+
+[context.deploy-preview.environment]
+NODE_ENV = "development"
+
+
+[context.dev.environment]
+NODE_ENV = "development"

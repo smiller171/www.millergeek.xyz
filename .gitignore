@@ -11,4 +11,8 @@ dist
 
 .c9
 sw.*
-bower_components
+.vitepress/dist
+.vitepress/cache
+
+# Local Netlify folder
+.netlify
