@@ -2,6 +2,7 @@
 import { useData } from 'vitepress'
 import About from './About.vue'
 import Resume from './Resume.vue'
+import WordMark from './WordMark.vue';
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { site, frontmatter } = useData()
@@ -9,7 +10,7 @@ const { site, frontmatter } = useData()
 
 <template>
   <header class="titlebar primary on-primary-text" id="titlebar">
-    <h1>{{ site.title }}</h1>
+    <WordMark />
   </header>
   <div class="topnav surface">
     <nav class="elevation-3 primary" id="topnav">
@@ -47,6 +48,7 @@ body {
   margin: 0;
   padding: 0;
   z-index: -1;
+  font-family: 'Istok Web', sans-serif;
 }
 
 header {

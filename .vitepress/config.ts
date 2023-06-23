@@ -1,21 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { createContentLoader } from 'vitepress'
 
-
-interface Job {
-  company: string
-  position: string
-  startDate: {
-    time: number
-    string: string
-  }
-  endDate: {
-    time: number
-    string: string
-  }
-  src: string
-  html: string
-}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -26,30 +10,54 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   mpa: false,
-  async buildEnd() {
-    const posts = await createContentLoader('app/resume/jobs/*.md', {
-      render: true,
-      transform(raw): Job[] {
-        return raw
-          .map(({ frontmatter, src, html }) => ({
-            company: frontmatter.company,
-            position: frontmatter.position,
-            startDate: formatDate(frontmatter.startDate),
-            endDate: formatDate(frontmatter.endDate),
-            src,
-            html
-          }))
-          .sort((a, b) => b.startDate.time - a.startDate.time)
-      }
-    }).load()
-    // generate files based on posts metadata, e.g. RSS feed
+  async transformHead({ assets }) {
+    const Rubik = assets.find(file => file.includes('rubik'))
+    const Istok = assets.find(file => file.includes('istok'))
+    const Merienda = assets.find(file => file.includes('merienda'))
+
+    let result = []
+    if (Rubik) {
+      result.push(
+        [
+          'link',
+          {
+            rel: 'preload',
+            href: Rubik,
+            as: 'font',
+            type: 'font/woff2',
+            crossorigin: ''
+          }
+        ]
+      )
+    }
+    if (Istok) {
+      result.push(
+        [
+          'link',
+          {
+            rel: 'preload',
+            href: Istok,
+            as: 'font',
+            type: 'font/woff2',
+            crossorigin: ''
+          }
+        ]
+      )
+    }
+    if (Merienda) {
+      result.push(
+        [
+          'link',
+          {
+            rel: 'preload',
+            href: Merienda,
+            as: 'font',
+            type: 'font/woff2',
+            crossorigin: ''
+          }
+        ]
+      )
+    }
+    return result
   }
 })
-
-function formatDate(raw: string): Job[ 'startDate' ] | Job[ 'endDate' ] {
-  let date = new Date(raw)
-  return {
-    time: +date,
-    string: raw
-  }
-}
