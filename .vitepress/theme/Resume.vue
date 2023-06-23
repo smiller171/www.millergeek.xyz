@@ -12,6 +12,7 @@ const { site, frontmatter } = useData()
   <div class="jobs-list qual-container">
     <Card class="job" v-html=quals[0].html />
   </div>
+  <hr class="">
   <div class="jobs-list">
     <Card class="job" v-for="job in jobs" v-html=job.html />
     <Card class="filler job" />
