@@ -1,5 +1,5 @@
 .primary {
-  background-color: var(--md-sys-color-primary);
+  background-color: var(--arc-palette-cutoutColor, --md-sys-color-primary);
 }
 
 .primary-text {
@@ -11,15 +11,15 @@
 }
 
 .on-primary-text {
-  color: var(--md-sys-color-on-primary);
+  color: var(--arc-palette-foregroundPrimary, --md-sys-color-on-primary);
 }
 
 .primary-container {
-  background-color: var(--md-sys-color-primary-container);
+  background-color: var(--arc-palette-background, --md-sys-color-primary-container);
 }
 
 .primary-container-text {
-  color: var(--md-sys-color-primary-container);
+  color: var(--arc-palette-foregroundPrimary, --md-sys-color-primary-container);
 }
 
 .on-primary-container {
@@ -47,7 +47,7 @@
 }
 
 .secondary-container {
-  background-color: var(--md-sys-color-secondary-container);
+  background-color: var(--arc-palette-backgroundExtra, --md-sys-color-secondary-container);
 }
 
 .secondary-container-text {
@@ -59,7 +59,7 @@
 }
 
 .on-secondary-container-text {
-  color: var(--md-sys-color-on-secondary-container);
+  color: var(--arc-palette-foregroundPrimary, --md-sys-color-on-secondary-container);
 }
 
 .tertiary {
@@ -143,7 +143,7 @@
 }
 
 .surface {
-  background-color: var(--md-sys-color-surface);
+  background-color: var(--arc-palette-background, --md-sys-color-surface);
 }
 
 .surface-text {

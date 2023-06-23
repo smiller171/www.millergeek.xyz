@@ -26,6 +26,31 @@ const { site, frontmatter } = useData()
     min-width: 14rem;
     max-width: 48rem;
     flex: 1 1 31rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      margin-bottom: 0;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+
+    @media print {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      ul {
+        font-size: 0.7rem;
+      }
+
+    }
   }
 
   .filler {

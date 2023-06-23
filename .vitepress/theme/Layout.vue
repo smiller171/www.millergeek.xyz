@@ -12,7 +12,7 @@ const { site, frontmatter } = useData()
   <header class="titlebar primary on-primary-text" id="titlebar">
     <WordMark />
   </header>
-  <div class="topnav surface">
+  <div class="topnav surface no-print">
     <nav class="elevation-3 primary" id="topnav">
       <ul>
         <li class="nav-item"><a class="on-primary-text" href="/">About</a></li>
@@ -28,7 +28,7 @@ const { site, frontmatter } = useData()
       <Content />
     </Card>
   </div>
-  <footer class="primary on-primary-text elevation-3">
+  <footer class="primary on-primary-text elevation-3 no-print">
     <div class="footer-left">
       <span>Scott </span>
       <span>Miller</span>
@@ -116,5 +116,24 @@ footer {
       }
     }
   }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .main {
+    display: block !important;
+  }
+
+  .jobtitle {
+    display: block !important;
+  }
+
+  * {
+    box-shadow: none !important;
+  }
+
 }
 </style>

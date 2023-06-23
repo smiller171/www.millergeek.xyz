@@ -15,9 +15,17 @@ const { site, frontmatter } = useData()
   .card {
     padding: 1em;
     border-radius: 1em;
+    page-break-inside: avoid;
 
     :first-child {
       margin-top: 0;
+    }
+
+    @media print {
+      border: 1px solid grey;
+      box-sizing: border-box;
+      display: block;
+      color: black;
     }
   }
 </style>
