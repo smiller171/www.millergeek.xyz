@@ -1,46 +1,49 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
+import { Content, useData } from 'vitepress'
 import About from './About.vue'
 import Resume from './Resume.vue'
 import WordMark from './WordMark.vue';
 
 // https://vitepress.dev/reference/runtime-api#usedata
-const { site, frontmatter } = useData()
+const { site, frontmatter, page } = useData()
 </script>
 
 <template>
-  <header class="titlebar primary on-primary-text" id="titlebar">
-    <WordMark />
-  </header>
-  <div class="topnav surface no-print">
-    <nav class="elevation-3 primary" id="topnav">
-      <ul>
-        <li class="nav-item"><a class="on-primary-text" href="/">About</a></li>
-        <li class="nav-item"><a class="on-primary-text" href="/resume">Resume</a></li>
-        <li class="nav-item"><a class="on-primary-text" href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="main surface on-surface-text">
-    <Resume v-if="frontmatter.layout === 'resume'" />
-    <About v-else-if="frontmatter.layout === 'about'" />
-    <Card v-else >
-      <Content />
-    </Card>
-  </div>
-  <footer class="primary on-primary-text elevation-3 no-print">
-    <div class="footer-left">
-      <span>Scott </span>
-      <span>Miller</span>
+  <Content v-if="page.filePath == 'keybase.txt'" />
+  <div v-else>
+    <header class="titlebar primary on-primary-text" id="titlebar">
+      <WordMark />
+    </header>
+    <div class="topnav surface no-print">
+      <nav class="elevation-3 primary" id="topnav">
+        <ul>
+          <li class="nav-item"><a class="on-primary-text" href="/">About</a></li>
+          <li class="nav-item"><a class="on-primary-text" href="/resume">Resume</a></li>
+          <li class="nav-item"><a class="on-primary-text" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="footer-right">
-      <ul>
-        <li><a class="on-primary-text" href="https://www.linkedin.com/in/scott-miller-91713652/">LinkedIn</a></li>
-        <li><a class="on-primary-text" href="https://github.com/smiller171">GitHub</a></li>
-        <li><a class="on-primary-text" href="https://keybase.io/smiller171">KeyBase</a></li>
-      </ul>
+    <div class="main surface on-surface-text">
+      <Resume v-if="frontmatter.layout === 'resume'" />
+      <About v-else-if="frontmatter.layout === 'about'" />
+      <Card v-else >
+        <Content />
+      </Card>
     </div>
-  </footer>
+    <footer class="primary on-primary-text elevation-3 no-print">
+      <div class="footer-left">
+        <span>Scott </span>
+        <span>Miller</span>
+      </div>
+      <div class="footer-right">
+        <ul>
+          <li><a class="on-primary-text" href="https://www.linkedin.com/in/scott-miller-91713652/">LinkedIn</a></li>
+          <li><a class="on-primary-text" href="https://github.com/smiller171">GitHub</a></li>
+          <li><a class="on-primary-text" href="https://keybase.io/smiller171">KeyBase</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <style>

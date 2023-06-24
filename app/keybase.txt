@@ -1,0 +1,81 @@
+==================================================================
+https://keybase.io/smiller171
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://millergeek.xyz
+  * I am smiller171 (https://keybase.io/smiller171) on keybase.
+  * I have a public key with fingerprint A4B0 55D0 4E7D 2704 E673  0CCB 8659 EE68 4CAD 0E9F
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101078ab0228cba5c09d7b66c241edeb1eb4f001a01581b9c6957674681968429da0a",
+      "fingerprint": "a4b055d04e7d2704e6730ccb8659ee684cad0e9f",
+      "host": "keybase.io",
+      "key_id": "8659ee684cad0e9f",
+      "kid": "0101078ab0228cba5c09d7b66c241edeb1eb4f001a01581b9c6957674681968429da0a",
+      "uid": "e0e2b660297259e41145c049c8d60d19",
+      "username": "smiller171"
+    },
+    "merkle_root": {
+      "ctime": 1521598569,
+      "hash_meta": "46b7c5eeef09bd6fc87cc32846de0a5d8d74dd826014d3d0e1ba4ca8821c543c",
+      "seqno": 2264442
+    },
+    "revoke": {
+      "sig_ids": [
+        "64c37ffab1e23b053a90b1e6dfcecb1d34021ec9fa6a4e38058e6f2d11d48a5b0f"
+      ]
+    },
+    "service": {
+      "hostname": "millergeek.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1521598548,
+  "expire_in": 157680000,
+  "prev": "91c3edc62f722ebdb05ccba751c6ecc8f36bb6a94ec1dfeb3d5657870c353623",
+  "seqno": 93,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMK+AnicrVNdaB1FGL2pvVUDqVWwxoIgqzFIQpiZnZ2dvUSx1QcxNiLNi7eVdX6+
+vVnuz97s7r0mjRGbUiEq1Wqsb4paoQ+CDRL6F2mNFSoxD60iwUJqTRUatCgaVATr
+bKwI4qO7D7M/55zvfOebOdV2Ta615YUb9aYtCw/mW+ZmdzZyxamTA6OWjPSIVRi1
+yrC6QEVDkvrlUFsFC2Fzu1xIRAhXUjgKedqVjClCMWiQGCQNEMICYYdj6SnmOS5z
+KePYY5wSTwskrG4rCGsliOtxWEuNrKASOY5GFFxNXLMw10ZKSc4cD8DwlNAIvMAQ
+B6MkYxhzUiTQE0bmm3nxV+39B/5/9t1YlQMExJAR8VxiKlKMqVGknuKaIY29DJhA
+XBNVMOikGlYqEGMXW2PdVhXicgX8OIrSLF6VhhkIOwQ7HneYZ1oUyaBfhVQYLmXS
+VQ4ABMiTmgWKu0rZhFOmAQlHc+1SrTlhCFNtm6axFKZ7zglWDrWVcZLAUC2yCoQw
+SikxDmJoRmXIiidhyQSXWIXtFqPKdoNAmCSIbaZhCw+ZZ6YDBUpibVNEMCgvEExQ
+sDlyOLCAaIw15cKRKLAeH8uKxc1QrYpnk7qawF8BlADKPcMjO42nehylkYoq5t9g
+mtaTQpZMOlLPwE+C9K/K+DKsabNTDKMJcRJGNZOUQf4rNMq7LRiuhzH4YYYwk+PI
+XFkdaBpJDysbtGIkcAkBqU1/ZncJ18GKgVI8sJmUTHgUFNYBSFs7zHG5i5Tt2IzY
+/6To2canKGVTDUs1kTZisMZmT+5Ym2tpza3Lr8mOUK71+g1/H6y91117RbG+rnP3
+z89sLLU3vrgzP3tw29l9MxMrX916U+Xe/tc6es6cXrn8+sTk3X/8eqz40YbFA/EH
+b97S+H7kxPL56crTR94vTMXDe3879t07zZb5tkOPnHj7cKdc13dhwWnf1eY/u9i/
++/nt+K3Rj9d33rd45OKec3tat3yzdd/mqW/3T9/+kqWW1/c9XFzTvnKpo//d5eGh
+4lNrn/uhMNl+/NXkUrlt+cIDN+Qnf9/tV3qfmfj6ritJ35lC/rFPkrmu0xvPHz54
+T3G8unT2la7LC4eWVr6cvnnTy+OdT5QOPDT++dH5z37pvW1b4Q5pv7e59/jQzKOn
+lsI3FrsH8Isdcz/uquyvTX+4tfizLv00cPHTPwE1qIXy
+=Ua2q
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/smiller171
+
+==================================================================
