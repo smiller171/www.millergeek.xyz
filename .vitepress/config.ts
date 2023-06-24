@@ -10,6 +10,9 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   mpa: false,
+  rewrites: {
+    'keybase.txt': '.well-known/keybase.txt'
+  },
   async transformHead({ assets }) {
     const Rubik = assets.find(file => file.includes('rubik'))
     const Istok = assets.find(file => file.includes('istok'))
