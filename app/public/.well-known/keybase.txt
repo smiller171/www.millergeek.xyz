@@ -1,1 +1,1 @@
-app/static/keybase.txt
+../keybase.txt
