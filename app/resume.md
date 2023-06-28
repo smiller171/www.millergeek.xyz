@@ -27,13 +27,6 @@ layout: resume
 </Card>
 <Card class="job">
 
-## Hive
-### October 2022 - January 2023
-* Advised on strategy as well as client & talent acquisition
-
-</Card>
-<Card class="job">
-
 ## Storable
 ### September 2021 - August 2022
 * Wrote scripts in JS, TypeScript, and Python to support migrations
