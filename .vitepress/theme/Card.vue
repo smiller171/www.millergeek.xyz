@@ -27,6 +27,10 @@ const { site, frontmatter } = useData()
       display: block;
       color: black;
     }
+
+    a {
+      color: var(--md-sys-color-on-secondary-container);
+    }
   }
 </style>
 

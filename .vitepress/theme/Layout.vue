@@ -2,6 +2,7 @@
 import { Content, useData } from 'vitepress'
 import About from './About.vue'
 import Resume from './Resume.vue'
+import Contact from './Contact.vue'
 import WordMark from './WordMark.vue';
 
 // https://vitepress.dev/reference/runtime-api#usedata
@@ -26,6 +27,7 @@ const { site, frontmatter, page } = useData()
     <div class="main surface on-surface-text">
       <Resume v-if="frontmatter.layout === 'resume'" />
       <About v-else-if="frontmatter.layout === 'about'" />
+      <Contact v-else-if="frontmatter.layout === 'contact'" />
       <Card v-else >
         <Content />
       </Card>
