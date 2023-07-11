@@ -14,6 +14,7 @@ const { site, frontmatter, page } = useData()
   <div v-else>
     <header class="titlebar primary on-primary-text" id="titlebar">
       <WordMark />
+      <span class="email">scott@millergeek.xyz</span>
     </header>
     <div class="topnav surface no-print">
       <nav class="elevation-3 primary" id="topnav">
@@ -63,6 +64,10 @@ header {
   > h1 {
     margin: 0;
     font-size: 5rem;
+  }
+
+  .email {
+    display: none;
   }
 }
 
@@ -138,6 +143,11 @@ footer {
 
   * {
     box-shadow: none !important;
+  }
+
+  .email {
+    display: inline !important;
+    color: black !important;
   }
 
 }
