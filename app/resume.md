@@ -18,6 +18,15 @@ layout: resume
 <div class="jobs-list">
 <Card class="job">
 
+## Apothesource
+### August 2023 - Present
+* Monitoring and maintaining microservices for the VA
+* Working extensively with CNCF technologies, including Kubernetes and Prometheus
+* Debugging JAVA code as necessary
+
+</Card>
+<Card class="job">
+
 ## Vivsoft
 ### December 2022 - April 2023
 * Led my team through the configuration and maintenance of a Platform One Kubernetes architecture
