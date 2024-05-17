@@ -19,7 +19,7 @@ layout: resume
 <Card class="job">
 
 ## Apothesource
-### August 2023 - Present
+### August 2023 - April 2024
 * Monitoring and maintaining microservices for the VA
 * Working extensively with CNCF technologies, including Kubernetes and Prometheus
 * Debugging JAVA code as necessary
