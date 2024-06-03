@@ -14,7 +14,9 @@ const { site, frontmatter, page } = useData()
   <div v-else>
     <header class="titlebar primary on-primary-text" id="titlebar">
       <WordMark />
-      <span class="email">scott@millergeek.xyz</span>
+      <span class="contact">scott@millergeek.xyz</span></br>
+      <span class="contact">(512) 814-8521</span></br>
+      <span class="contact">Leesburg, VA, USA</span>
     </header>
     <div class="topnav surface no-print">
       <nav class="elevation-3 primary" id="topnav">
@@ -29,7 +31,7 @@ const { site, frontmatter, page } = useData()
       <Resume v-if="frontmatter.layout === 'resume'" />
       <About v-else-if="frontmatter.layout === 'about'" />
       <Contact v-else-if="frontmatter.layout === 'contact'" />
-      <Card v-else >
+      <Card v-else>
         <Content />
       </Card>
     </div>
@@ -66,7 +68,7 @@ header {
     font-size: 5rem;
   }
 
-  .email {
+  .contact {
     display: none;
   }
 }
@@ -145,8 +147,8 @@ footer {
     box-shadow: none !important;
   }
 
-  .email {
-    display: inline !important;
+  .contact {
+    display: block !important;
     color: black !important;
   }
 

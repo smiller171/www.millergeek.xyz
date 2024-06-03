@@ -14,24 +14,39 @@ const { site, frontmatter } = useData()
     margin-bottom: 1em;
   }
 
-  .jobs-list {
+  .jobs-list, .education-list {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: stretch;
     gap: 1em;
+    margin-bottom: 1em;
   }
 
-  .job {
+  .skills {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .job, .education {
     min-width: 14rem;
     max-width: 48rem;
     flex: 1 1 31rem;
 
-    h2 {
-      margin-bottom: 0.5rem;
-    }
 
     h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    h4 {
       margin-bottom: 0;
       margin-top: 0.5rem;
       font-size: 1rem;
@@ -42,8 +57,8 @@ const { site, frontmatter } = useData()
     }
 
     @media print {
-      h2 {
-        font-size: 1.2rem;
+      h3 {
+        /* font-size: 1.2rem; */
       }
 
       ul {
@@ -58,8 +73,8 @@ const { site, frontmatter } = useData()
     height: 0;
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
 </style>
