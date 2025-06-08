@@ -1,4 +1,5 @@
 ---
+title: Raw Resume
 layout: resume
 ---
 <div class="jobs-list qual-container">  
@@ -20,8 +21,18 @@ layout: resume
 <div class="jobs-list">
 <Card class="job">
 
+### Senior DevOps Engineer at Bluesight
+#### July 2024 - June 2025
+* Led an effort to improve and standardize Terraform across teams
+* Worked to integrate new engineering teams and projects when acquiring new organizations
+* Migrated abandoned CloudFormation infrastructure to Terraform
+* Managed microservices in AWS ECS
+
+</Card>
+<Card class="job">
+
 ### Independent Contractor/Consultant
-#### May 2023 - Present
+#### May 2023 - July 2024
 * Designing and building responsive, accessible websites for clients using Vue
 * Optimizing for performance and cost using Jamstack on Netlify
 * Negotiating requirements and schedules with clients
