@@ -7,10 +7,10 @@ layout: resume
 
 ## Qualifications
 * \>10 years experience in Software and DevOps
-* Skilled in both frontend and backend development
+* Expert in modern infrastructure practices and build automation
+* Mastery of AWS, Terraform, and Docker
 * Experience in several programming languages including JavaScript, Python, and Go
-* Expert in modern infrastructure and build automation
-* Experience with both small startups and large organizations like NASA and the VA
+* Familiarity with both small startups and large organizations like NASA and the VA
 
 </Card>
 </div>
@@ -33,10 +33,8 @@ layout: resume
 
 ### Independent Contractor/Consultant
 #### May 2023 - July 2024
-* Designing and building responsive, accessible websites for clients using Vue
-* Optimizing for performance and cost using Jamstack on Netlify
-* Negotiating requirements and schedules with clients
-* Utilizing GitOps for simple and reliable updates
+* Designed and built responsive, accessible websites for clients using Vue
+* Negotiated requirements and schedules with clients
 * Monitored and maintained Kubernetes applications for the VA
 * Wrote and debugged Java microservices
 * Worked extensively with CNCF technologies, including Kubernetes and Prometheus
@@ -49,7 +47,6 @@ layout: resume
 * Led my team through the configuration and maintenance of a Platform One Kubernetes architecture
 * Interfaced with the client to set priorities and timelines
 * Used Terraform to enable automated setup and teardown of complex systems in AWS
-* Enabled GitOps with GitLab CI
 
 </Card>
 <Card class="job">
