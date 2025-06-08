@@ -21,6 +21,7 @@
   },
   "scripts": {
     "dev": "vitepress dev",
+    "start": "npm run dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
