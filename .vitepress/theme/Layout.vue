@@ -145,6 +145,7 @@ footer {
 
   * {
     box-shadow: none !important;
+    background-color: white;
   }
 
   .contact {
