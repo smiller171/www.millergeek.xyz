@@ -1,5 +1,5 @@
 ---
-title: Raw Resume
+title: Scott Miller Resume
 layout: resume
 ---
 <div class="jobs-list qual-container">  
@@ -95,7 +95,6 @@ layout: resume
 ### DevOps Engineer at SpaceFlight Industries
 #### February 2016 - October 2017
 - Worked heavily with Docker using ECS
-- Automated complex infrastructure with CloudFormation
 - Wrote custom tooling for tracking software dependencies using Lambda and DynamoDB
 - Lead the effort to implement SSO across our toolchain
 
@@ -105,7 +104,6 @@ layout: resume
 ### DevOps Engineer at Content Analyst Company
 #### September 2014 - January 2016
 - Automated environment creation and CI/CD with Jenkins and Ansible Tower
-- Maintained 0 production downtime
 - Drove decisions around automation, monitoring, and security
 - Trained Developers in Ansible
 - Used Docker to simplify software packaging and reduce configuration management complexity
@@ -116,7 +114,6 @@ layout: resume
 ### Cloud Engineer at InfoZen
 #### April 2013 - August 2014
 - Worked extensively with AWS on NASA WestPrime contract
-- Managed Linux and Windows cloud servers with Ansible and shell scripts
 - Automated deployments using Ansible
 - Set up and managed locally hosted git solution
 
@@ -124,8 +121,6 @@ layout: resume
 
 <Card class="filler job" />
 </div>
-
--------------------------------------------
 
 ## Education:
 <div class="education-list">
@@ -135,33 +130,25 @@ layout: resume
 #### December 2010 - April 2011
 - Maintained top grades in Information Technology program
 - Focus on security and infrastructure
-- Obtained CompTIA Network+ and Security+ certifications
 
 </Card>
 
 <Card class="education skills">
 
 ### Additional Skills
-- JavaScript
-- TypeScript
+- JavaScript/TypeScript
 - Python
 - BASH
-- Go
 - Terraform
 - Docker
 - Ansible
 - Kubernetes
 - Vue
-- REST
 - APIs
 - CI/CD
 - AWS
 - Cloud Computing
 - Microservices
-- Serverless
 - Automation
-
-
 </Card>
-
 </div>
