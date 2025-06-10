@@ -137,6 +137,7 @@ footer {
 
   .main {
     display: block !important;
+    padding-bottom: 0;
   }
 
   .jobtitle {
