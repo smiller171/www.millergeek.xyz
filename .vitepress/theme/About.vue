@@ -31,7 +31,7 @@ const { site, frontmatter } = useData()
 }
 
 img[alt~="Headshot"] {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 1em;
 }
