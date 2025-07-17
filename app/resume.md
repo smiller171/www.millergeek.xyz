@@ -61,7 +61,7 @@ layout: resume
 </Card>
 <Card class="job">
 
-### DevOps Engineer at Rhythmic Technologies
+### Senior DevOps Engineer at Rhythmic Technologies
 #### March 2019 - August 2021
 - Built out infrastructure automation for a diverse set of customers with Terraform
 - Created a PR-driven Terraform automation strategy in GitHub Actions
