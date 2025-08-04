@@ -154,5 +154,8 @@ footer {
     color: black !important;
   }
 
+  div[data-netlify-deploy-id] {
+    display: none !important;
+  }
 }
 </style>
