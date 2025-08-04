@@ -42,7 +42,7 @@ const { site, frontmatter, page } = useData()
       </div>
       <div class="footer-right">
         <ul>
-          <li><a class="on-primary-text" href="https://www.linkedin.com/in/scott-miller-91713652/">LinkedIn</a></li>
+          <li><a class="on-primary-text" href="https://www.linkedin.com/in/millergeek/">LinkedIn</a></li>
           <li><a class="on-primary-text" href="https://github.com/smiller171">GitHub</a></li>
           <li><a class="on-primary-text" href="https://keybase.io/smiller171">KeyBase</a></li>
         </ul>
