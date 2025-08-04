@@ -81,7 +81,7 @@ layout: resume
 </Card>
 <Card class="job">
 
-### Software Engineer at ScienceLogic
+### Software Engineer II at ScienceLogic
 #### December 2017 - August 2018
 - Used Kickstart and Cloud-init to automate an unattended K8s cluster setup and service install
 - Evaluated Docker Swarm and Kubernetes for use in client datacenters
