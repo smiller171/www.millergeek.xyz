@@ -5,12 +5,9 @@ layout: resume
 <div class="jobs-list qual-container">  
 <Card class="job">
 
-## Qualifications
-- \>10 years experience in Software and DevOps
-- Expert in modern infrastructure practices and build automation
-- Mastery of AWS, Terraform, and Docker
-- Experience in several programming languages including JavaScript, Python, and Go
-- Familiarity with both small startups and large organizations like NASA and the VA
+## Summary
+
+I'm a Software Engineer passionate about building reactive webapps with a focus on performance. Over the last ten years I've built significant skills in web dev in addition to mastery of infrastructure and automation. In my DevOps work I've focused on DevEx, driving a belief in the value of fast and responsive experiences.
 
 </Card>
 </div>
@@ -136,19 +133,19 @@ layout: resume
 <Card class="education skills">
 
 ### Additional Skills
-- JavaScript/TypeScript
-- Python
-- BASH
-- Terraform
-- Docker
-- Ansible
-- Kubernetes
+- JavaScript
+- TypeScript
 - Vue
+- Node.js
 - APIs
-- CI/CD
+- Python
+- Bash
+- Terraform
 - AWS
-- Cloud Computing
-- Microservices
-- Automation
+- Ansible
+- CI/CD
+- Architecture
+- Docker
+- Kubernetes
 </Card>
 </div>
