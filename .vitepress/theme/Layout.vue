@@ -14,8 +14,8 @@ const { site, frontmatter, page } = useData()
   <div v-else>
     <header class="titlebar primary on-primary-text" id="titlebar">
       <WordMark />
-      <span class="contact">scott@millergeek.xyz</span></br>
-      <span class="contact">(512) 814-8521</span></br>
+      <span class="contact">scott@millergeek.xyz</span><br/>
+      <span class="contact">(512) 814-8521</span><br/>
       <span class="contact">Leesburg, VA, USA</span>
     </header>
     <div class="topnav surface no-print">
