@@ -26,6 +26,7 @@ layout: resume
 - Led an effort to improve and standardize Terraform across teams
 - Worked to integrate new engineering teams and projects when acquiring new organizations
 - Migrated abandoned CloudFormation infrastructure to Terraform
+- Used GitHub Actions and Atlantis to manage infrastructure as code
 - Managed microservices in AWS ECS
 
 </Card>
