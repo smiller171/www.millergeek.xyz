@@ -64,7 +64,6 @@ const { site, frontmatter } = useData()
       ul {
         font-size: 0.7rem;
       }
-
     }
   }
 
