@@ -20,7 +20,6 @@ const { site, frontmatter } = useData()
     justify-content: center;
     align-items: stretch;
     gap: 1em;
-    margin-bottom: 1em;
   }
 
   .skills {
