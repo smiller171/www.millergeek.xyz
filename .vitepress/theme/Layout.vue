@@ -28,9 +28,9 @@ const { site, frontmatter, page } = useData()
       </nav>
     </div>
     <div class="main surface on-surface-text">
-      <Resume v-if="frontmatter.layout === 'resume'" />
-      <About v-else-if="frontmatter.layout === 'about'" />
-      <Contact v-else-if="frontmatter.layout === 'contact'" />
+      <Resume class="resume" id="resume" v-if="frontmatter.layout === 'resume'" />
+      <About class="about" id="about" v-else-if="frontmatter.layout === 'about'" />
+      <Contact class="contact" id="contact" v-else-if="frontmatter.layout === 'contact'" />
       <Card v-else>
         <Content />
       </Card>
